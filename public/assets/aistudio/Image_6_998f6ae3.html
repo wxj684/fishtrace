@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f3faff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 4.5rem);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#c9e7f6", "inverse-on-surface": "#def4ff", "on-surface-variant": "#3f484c", "inverse-surface": "#16343f", "tertiary-fixed-dim": "#ffb59c", "surface-container-high": "#ceedfb", "surface-tint": "#13667f", "tertiary-fixed": "#ffdbcf", "error": "#ba1a1a", "on-tertiary": "#ffffff", "on-error": "#ffffff", "outline-variant": "#bfc8cd", "on-tertiary-fixed": "#390c00", "surface-dim": "#c0dfed", "outline": "#70787d", "secondary-fixed": "#bbe9ff", "primary-fixed-dim": "#8bd0ec", "on-primary-fixed-variant": "#004d62", "on-secondary-fixed": "#001f29", "surface-container-low": "#e5f6ff", "on-error-container": "#93000a", "inverse-primary": "#8bd0ec", "on-tertiary-container": "#ffe4dc", "tertiary": "#942e00", "on-primary-container": "#cbefff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#194c5e", "secondary-fixed-dim": "#9ecde3", "on-primary-fixed": "#001f29", "secondary-container": "#b7e7fd", "surface-container-lowest": "#ffffff", "on-secondary-container": "#39697b", "on-primary": "#ffffff", "secondary": "#356477", "primary-fixed": "#b9eaff", "on-background": "#001f29", "surface-bright": "#f3faff", "surface-container": "#d7f2ff", "primary-container": "#24718a", "background": "#f3faff", "tertiary-container": "#ba400a", "on-surface": "#001f29", "on-tertiary-fixed-variant": "#822700", "surface-container-highest": "#c9e7f6", "surface": "#f3faff", "on-secondary": "#ffffff", "primary": "#00586f" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "space-lg": "1rem", "space-xs": "0.25rem", "margin": "1rem", "gutter": "0.75rem" }, "fontFamily": { "label-data-sm": ["JetBrains Mono"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-data-md": ["JetBrains Mono"], "label-data-lg": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"] }, "fontSize": { "label-data-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["17px", { "lineHeight": "24px", "fontWeight": "600" }], "label-data-md": ["16px", { "lineHeight": "20px", "fontWeight": "500" }], "label-data-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,50,61,0.05)] pt-safe"><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="鱼迹 App Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi_4Lqu-BP5_3l_Qplx3g8erdHlKdwnXPkv2vuU4ZPAexNoQgpvu9WrGhpuLuiNOYzSN8gry_LNXsQ2X5Q4Xbitlo2FZre_f44zuPpKPJydIPf7Os1g_zhJbW1UFgQvrDvDx4hzK99kM_V4_0Z9MZcj87S6HpCzjvuY8p1p3fhaM5_xkNrmZfsB4pHsZ1Aot-QXpogYf31rfG3TfcTfhQcBP27r41iYHW_ouZ7jTEFH_4fUn7ehGZAtA"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">鱼迹</span><span class="font-label-caps text-label-caps text-primary tracking-wider uppercase font-semibold hidden xs:inline">FishTrace</span></div><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-data-sm text-[10px] text-on-surface-variant truncate">1013hPa · 18.5℃ 旺咬</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button class="h-8 px-2 rounded-xl bg-surface-container flex items-center gap-1 text-primary hover:bg-surface-container-high transition-colors" title="云端已同步"><span class="material-symbols-outlined text-[16px]">cloud_done</span><span class="font-label-caps text-label-caps text-primary uppercase">SYNC</span></button><button class="h-8 px-2 rounded-xl bg-primary-container text-on-primary flex items-center gap-1 shadow-sm hover:opacity-95 transition-opacity" title="出钓计时"><span class="material-symbols-outlined text-[16px]">timer</span><span class="font-label-data-sm text-label-data-sm font-semibold">02:45</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Feedback Banner (Hidden by default) -->
+<div class="fixed top-16 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 opacity-0 pointer-events-none transform -translate-y-2" id="toastNotification">
+<div class="bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-md flex items-center gap-space-xs font-label-data-sm text-label-data-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" id="toastIcon">check_circle</span>
+<span id="toastMessage">已保存标点变更</span>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="px-margin pt-space-md pb-space-sm flex flex-col gap-space-sm">
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-space-md flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 bg-surface-container-lowest text-on-surface placeholder:text-outline rounded-xl font-body-md text-body-md focus:outline-none shadow-sm transition-all" id="spotSearchInput" placeholder="搜索水库、江河标点、水深或暗礁备注..." type="text"/>
+<button class="absolute inset-y-0 right-0 pr-space-md flex items-center text-outline hover:text-on-surface hidden" id="clearSearchBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Category Filter Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5" id="categoryTagList">
+<button class="cat-pill active flex-shrink-0 px-space-md py-1.5 rounded-full bg-primary-container text-on-primary font-label-caps text-label-caps tracking-wider transition-all" data-cat="all">
+        全部 (<span id="totalBadgeCount">8</span>)
+      </button>
+<button class="cat-pill flex-shrink-0 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps tracking-wider transition-all" data-cat="rapid">
+        深潭急流
+      </button>
+<button class="cat-pill flex-shrink-0 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps tracking-wider transition-all" data-cat="bay">
+        回水湾草区
+      </button>
+<button class="cat-pill flex-shrink-0 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps tracking-wider transition-all" data-cat="structure">
+        桥墩乱石
+      </button>
+<button class="cat-pill flex-shrink-0 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps tracking-wider transition-all" data-cat="dropoff">
+        陡坎铧尖
+      </button>
+</div>
+</div>
+<!-- Bathymetric Chart Visualizer Section -->
+<div class="px-margin mb-space-md">
+<div class="relative w-full rounded-xl overflow-hidden bg-inverse-surface shadow-md aspect-[16/9] select-none">
+<!-- High precision hydrographic contour illustration -->
+<img alt="界首水系水深水文测绘图" class="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-105" data-alt="Technical bathymetric depth map of a lake reservoir with contour lines, submerged river channels, underwater shoals, elevation points, and deep water holes rendered in rich marine deep cyan, teal, and slate topography tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrAAsKq4vVY8PSmjN3ZoQF5Smj7Gf0nzi6XrptAeZzKcUJzIs80u1ZxhPZAxQh6vNSywKqimGl4UY1iB_N3Afwgx3UHbc4N1N8OuGBjwNnSsl5TJtrKm8KNit_xKJSCYBm7TgCRFtN_PGNLzw0X7NEOTKfi71a9--vwNVb9t_i0CiYuxDHwdhDGd23Mz_ddQwjSLkHL2i-U-LP1I79aphq3symC956q7GxPEhN1HwyZPkoMsKjVcMj3Q"/>
+<!-- Top Overlay Gauge HUD -->
+<div class="absolute top-2 inset-x-2 flex items-center justify-between pointer-events-none">
+<div class="bg-inverse-surface/85 backdrop-blur-md px-2 py-1 rounded flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-inverse-on-surface tracking-wider uppercase font-semibold">千岛湖·界首主航道等高水深</span>
+</div>
+<div class="bg-inverse-surface/85 backdrop-blur-md px-2 py-1 rounded font-label-data-sm text-[10px] text-surface-variant tracking-tight">
+          36°15'N · 94°45'W
+        </div>
+</div>
+<!-- Interactive Hydro Point A -->
+<button class="group absolute top-[44%] left-[26%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer transition-transform active:scale-95" onclick="highlightSpotCard('spot-1')">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-6 h-6 rounded-full bg-tertiary/30 animate-ping"></span>
+<span class="relative w-3.5 h-3.5 rounded-full bg-tertiary-container shadow-md flex items-center justify-center text-on-tertiary font-label-caps text-[9px] font-bold">A</span>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-sm font-label-data-sm text-[10px] shadow-sm flex items-center gap-1 pointer-events-none group-hover:bg-primary-container">
+<span>铧树林铧尖</span>
+<span class="text-tertiary-fixed-dim font-bold">4.2m</span>
+</div>
+</button>
+<!-- Interactive Hydro Point B -->
+<button class="group absolute top-[36%] left-[64%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer transition-transform active:scale-95" onclick="highlightSpotCard('spot-2')">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-6 h-6 rounded-full bg-primary/40 animate-pulse"></span>
+<span class="relative w-3.5 h-3.5 rounded-full bg-primary-container shadow-md flex items-center justify-center text-on-primary font-label-caps text-[9px] font-bold">B</span>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-sm font-label-data-sm text-[10px] shadow-sm flex items-center gap-1 pointer-events-none group-hover:bg-primary-container">
+<span>沉船暗桩</span>
+<span class="text-primary-fixed-dim font-bold">6.8m</span>
+</div>
+</button>
+<!-- Interactive Hydro Point C -->
+<button class="group absolute bottom-[18%] left-[78%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer transition-transform active:scale-95" onclick="highlightSpotCard('spot-3')">
+<div class="relative flex items-center justify-center">
+<span class="relative w-3.5 h-3.5 rounded-full bg-secondary shadow-md flex items-center justify-center text-on-secondary font-label-caps text-[9px] font-bold">C</span>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface backdrop-blur-sm font-label-data-sm text-[10px] shadow-sm flex items-center gap-1 pointer-events-none group-hover:bg-primary-container">
+<span>西湾芦苇荡</span>
+<span class="text-secondary-fixed font-bold">1.8m</span>
+</div>
+</button>
+<!-- Bathymetric Legend Bar -->
+<div class="absolute bottom-2 inset-x-2 flex items-center justify-between bg-inverse-surface/80 backdrop-blur-sm px-2 py-1 rounded pointer-events-none font-label-caps text-[9px] text-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-1 bg-surface-container"></span>浅滩草区 0-2m</span>
+<span class="flex items-center gap-1"><span class="w-2 h-1 bg-primary-container"></span>主斜坡 2-6m</span>
+<span class="flex items-center gap-1"><span class="w-2 h-1 bg-primary"></span>主河槽深潭 8m+</span>
+</div>
+</div>
+</div>
+<!-- Operational Bar: Spot Counter, Sort, Add Action -->
+<div class="px-margin flex items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">标点水情名录</span>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-bold" id="filteredCountText">8处收录</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<!-- Sort Selector Dropdown -->
+<div class="relative">
+<select class="h-8 pl-2 pr-6 bg-surface-container text-on-surface rounded-xl font-label-caps text-label-caps font-semibold appearance-none cursor-pointer focus:outline-none shadow-sm" id="spotSortSelect" onchange="handleSortChange(this.value)">
+<option value="score">按鱼获战绩</option>
+<option value="depth-desc">按水深 (深到浅)</option>
+<option value="depth-asc">按水深 (浅到深)</option>
+<option value="dist">按水域距离</option>
+</select>
+<span class="material-symbols-outlined absolute right-1.5 top-1/2 -translate-y-1/2 text-[14px] text-outline pointer-events-none">arrow_drop_down</span>
+</div>
+<!-- Add Spot CTA -->
+<button class="h-8 px-2.5 rounded-xl bg-tertiary-container text-on-tertiary flex items-center gap-1 shadow-sm hover:opacity-90 active:scale-95 transition-all" onclick="openAddSpotModal()" title="标记新钓点">
+<span class="material-symbols-outlined text-[16px]">add_location_alt</span>
+<span class="font-label-caps text-label-caps uppercase font-bold tracking-wider">标记新点</span>
+</button>
+</div>
+</div>
+<!-- Spots Card Container -->
+<div class="px-margin flex flex-col gap-space-md pb-space-xl" id="spotsListContainer">
+<!-- Spot Card 1 -->
+<article class="spot-card relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300" data-category="dropoff" data-depth="4.2" data-dist="0.8" data-id="1" data-score="98" id="spot-1">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded-full bg-tertiary text-on-tertiary font-label-caps text-[11px] font-bold flex items-center justify-center flex-shrink-0">A</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate spot-title">桦树林3号深浅交界铧尖</h3>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-tertiary transition-colors" onclick="toggleFavorite(1)" title="星标关注">
+<span class="material-symbols-outlined text-[18px] text-tertiary fav-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-primary transition-colors" onclick="openEditModal(1)" title="修改参数">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-error transition-colors" onclick="requestDeleteSpot(1)" title="删除标点">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Status Indicator Pill -->
+<div class="flex flex-wrap items-center gap-1.5 mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-caps text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary animate-ping"></span>
+          活跃高产期
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">迎风背浪</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">走水微缓</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-data-sm text-[11px] ml-auto font-medium">距当前 0.8km</span>
+</div>
+<!-- Telemetry Spec Well -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-sm rounded-xl mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">适宜标靶水深</span>
+<span class="font-label-data-md text-label-data-md text-primary font-bold spot-depth-display">3.5 ~ 5.0m</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">水底底质</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface font-medium spot-bottom-display">沙泥平坎</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">优势主攻鱼种</span>
+<span class="font-label-data-sm text-label-data-sm text-tertiary font-bold spot-target-display">大鲤 / 鳊鱼</span>
+</div>
+</div>
+<!-- Field Observation Log Note -->
+<div class="flex items-start gap-1.5 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-lowest p-1">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">wb_incandescent</span>
+<p class="spot-note leading-relaxed">
+          铧尖两侧回水湾天然聚鱼，晨光与傍晚窗口期沿深浅交界 4.2m 等深线走底拖逗极易接口。
+        </p>
+</div>
+</article>
+<!-- Spot Card 2 -->
+<article class="spot-card relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300" data-category="structure" data-depth="6.2" data-dist="2.1" data-id="2" data-score="86" id="spot-2">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-caps text-[11px] font-bold flex items-center justify-center flex-shrink-0">B</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate spot-title">红石岩沉树水底盲区</h3>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-tertiary transition-colors" onclick="toggleFavorite(2)" title="星标关注">
+<span class="material-symbols-outlined text-[18px] text-outline fav-icon">star</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-primary transition-colors" onclick="openEditModal(2)" title="修改参数">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-error transition-colors" onclick="requestDeleteSpot(2)" title="删除标点">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Status Indicator Pill -->
+<div class="flex flex-wrap items-center gap-1.5 mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          需轻铅试探 · 易挂底
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">倒伏枯木</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">水流湍急</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-data-sm text-[11px] ml-auto font-medium">距当前 2.1km</span>
+</div>
+<!-- Telemetry Spec Well -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-sm rounded-xl mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">适宜标靶水深</span>
+<span class="font-label-data-md text-label-data-md text-primary font-bold spot-depth-display">6.2m</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">水底底质</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface font-medium spot-bottom-display">乱石枯枝堆</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">优势主攻鱼种</span>
+<span class="font-label-data-sm text-label-data-sm text-tertiary font-bold spot-target-display">军鱼 / 鳜鱼</span>
+</div>
+</div>
+<!-- Field Observation Log Note -->
+<div class="flex items-start gap-1.5 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-lowest p-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5">warning</span>
+<p class="spot-note leading-relaxed">
+          水下6米有老河堤沉树倒伏，藏大个体掠食鱼，建议德州钓组配防挂曲柄钩或重铅贴底轻跳。
+        </p>
+</div>
+</article>
+<!-- Spot Card 3 -->
+<article class="spot-card relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300" data-category="bay" data-depth="1.6" data-dist="3.4" data-id="3" data-score="92" id="spot-3">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded-full bg-secondary text-on-secondary font-label-caps text-[11px] font-bold flex items-center justify-center flex-shrink-0">C</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate spot-title">排坊西湾芦苇草滩</h3>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-tertiary transition-colors" onclick="toggleFavorite(3)" title="星标关注">
+<span class="material-symbols-outlined text-[18px] text-tertiary fav-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-primary transition-colors" onclick="openEditModal(3)" title="修改参数">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-error transition-colors" onclick="requestDeleteSpot(3)" title="删除标点">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Status Indicator Pill -->
+<div class="flex flex-wrap items-center gap-1.5 mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-caps text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          草洞需打隔夜窝
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">水流静止</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">浅草掩护</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-data-sm text-[11px] ml-auto font-medium">距当前 3.4km</span>
+</div>
+<!-- Telemetry Spec Well -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-sm rounded-xl mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">适宜标靶水深</span>
+<span class="font-label-data-md text-label-data-md text-primary font-bold spot-depth-display">1.2 ~ 1.8m</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">水底底质</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface font-medium spot-bottom-display">腐殖淤泥底</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">优势主攻鱼种</span>
+<span class="font-label-data-sm text-label-data-sm text-tertiary font-bold spot-target-display">野生大板鲫</span>
+</div>
+</div>
+<!-- Field Observation Log Note -->
+<div class="flex items-start gap-1.5 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-lowest p-1">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">park</span>
+<p class="spot-note leading-relaxed">
+          春季与深秋水温回暖时草缝必有大鲫巡游就饵，七星漂轻坠配长竿短线点钓效果奇佳。
+        </p>
+</div>
+</article>
+<!-- Spot Card 4 (Deep Rapid) -->
+<article class="spot-card relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300" data-category="rapid" data-depth="8.5" data-dist="4.7" data-id="4" data-score="81" id="spot-4">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary font-label-caps text-[11px] font-bold flex items-center justify-center flex-shrink-0">D</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate spot-title">老水闸下泄流深潭回水核</h3>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-tertiary transition-colors" onclick="toggleFavorite(4)" title="星标关注">
+<span class="material-symbols-outlined text-[18px] text-outline fav-icon">star</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-primary transition-colors" onclick="openEditModal(4)" title="修改参数">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-error transition-colors" onclick="requestDeleteSpot(4)" title="删除标点">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Status Indicator Pill -->
+<div class="flex flex-wrap items-center gap-1.5 mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-caps text-[11px] font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          溶氧量丰沛 · 咬钩凶猛
+        </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">水流湍急</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label-caps text-[11px]">深潭翻水</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-data-sm text-[11px] ml-auto font-medium">距当前 4.7km</span>
+</div>
+<!-- Telemetry Spec Well -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-sm rounded-xl mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">适宜标靶水深</span>
+<span class="font-label-data-md text-label-data-md text-primary font-bold spot-depth-display">7.5 ~ 9.0m</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">水底底质</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface font-medium spot-bottom-display">卵石冲刷槽</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">优势主攻鱼种</span>
+<span class="font-label-data-sm text-label-data-sm text-tertiary font-bold spot-target-display">翘嘴 / 鲈鱼</span>
+</div>
+</div>
+<!-- Field Observation Log Note -->
+<div class="flex items-start gap-1.5 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-lowest p-1">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">waves</span>
+<p class="spot-note leading-relaxed">
+          开闸放水后回水湾边缘集结大量小餐条，黄昏时分用米诺或沉水铅笔平收常遇大体型翘嘴截口。
+        </p>
+</div>
+</article>
+</div>
+<!-- Empty State View (Rendered when no search/filter matches) -->
+<div class="hidden px-margin py-space-xl flex flex-col items-center text-center" id="spotsEmptyState">
+<div class="w-48 h-48 rounded-2xl overflow-hidden mb-space-md shadow-inner bg-surface-container-low flex items-center justify-center">
+<img alt="空钓点状态插画" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRoW6UTRbtJtGC0Na31p6bjVHqBPE2HOvmPrSRJsY2i0DiQViFqtfRdnHw8PTIqfJYUPBNLw5z0KhrwwdAqtCS8x0VOrKIyaDZUcsYEZPQwq7mCxe2rSbkUUJWK3wCIz9SA8kU2_ykas8fL-oC6PqeBmNgYfGwS6n7f7t6CYuaNmY7diI0rkZqfYlFT8itPM4AR6U0LgfVlJblKMePGMBxsf7zs1O3U-OaEF4uM00IgeJNaQsHfEZJ7w"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">未寻获匹配的水情标点</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-md">
+      江河浩渺，此参数下暂无记录。可尝试清除搜索关键词、切换分类条件，或立即在水图上标定新勘测点。
+    </p>
+<button class="px-space-lg py-2 rounded-xl bg-primary text-on-primary font-label-caps text-label-caps tracking-wider uppercase font-semibold flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" onclick="resetFiltersAndSearch()">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+      一键重置筛选
+    </button>
+</div>
+<!-- Modal: Add New Fishing Spot -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center hidden" id="addSpotModal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-t-2xl p-space-lg shadow-xl max-h-[90vh] overflow-y-auto">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">add_location</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">记录新标点</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline hover:text-on-surface" onclick="closeAddSpotModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md" id="newSpotForm" onsubmit="handleCreateSpot(event)">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">标点名称 / 地貌特称</label>
+<input class="h-10 px-space-md bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none" id="newSpotTitle" placeholder="例如：南湾孤岛下切深坎" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">适宜水深 (米)</label>
+<input class="h-10 px-space-md bg-surface-container-low text-on-surface rounded-xl font-label-data-sm text-label-data-sm focus:outline-none" id="newSpotDepth" placeholder="例如：4.5m" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">水文地貌分类</label>
+<select class="h-10 px-space-md bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none" id="newSpotCategory">
+<option value="dropoff">陡坎铧尖</option>
+<option value="structure">桥墩乱石</option>
+<option value="bay">回水湾草区</option>
+<option value="rapid">深潭急流</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">底质状况</label>
+<input class="h-10 px-space-md bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none" id="newSpotBottom" placeholder="例如：沙泥坎 / 暗礁碎石" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">目标倾向鱼种</label>
+<input class="h-10 px-space-md bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none" id="newSpotTarget" placeholder="例如：大鲫 / 翘嘴 / 鲤鱼" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">实战走水与线组策略心得</label>
+<textarea class="p-space-md bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none resize-none" id="newSpotNote" placeholder="记录挂底风险、走水缓急及水层建议..." rows="2"></textarea>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-11 rounded-xl bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase font-bold" onclick="closeAddSpotModal()" type="button">
+            取消
+          </button>
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-caps text-label-caps uppercase font-bold shadow-sm" type="submit">
+            确认归档标点
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Modal: Edit Spot Depth & Note -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center hidden" id="editSpotModal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-t-2xl p-space-lg shadow-xl">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">调整水深与实战备注</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline hover:text-on-surface" onclick="closeEditModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-md" id="editSpotForm" onsubmit="handleSaveEdit(event)">
+<input id="editSpotId" type="hidden"/>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">标点名称</label>
+<input class="h-10 px-space-md bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none" id="editSpotTitle" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">标靶探测水深</label>
+<input class="h-10 px-space-md bg-surface-container-low text-on-surface rounded-xl font-label-data-sm text-label-data-sm focus:outline-none" id="editSpotDepth" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">实测心得与出鱼动态</label>
+<textarea class="p-space-md bg-surface-container-low text-on-surface rounded-xl font-body-md text-body-md focus:outline-none resize-none" id="editSpotNote" rows="3"></textarea>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-11 rounded-xl bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase font-bold" onclick="closeEditModal()" type="button">
+            放弃
+          </button>
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-caps text-label-caps uppercase font-bold shadow-sm" type="submit">
+            更新水情数据
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Delete Confirmation Bottom Sheet -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-end justify-center hidden" id="deleteConfirmSheet">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-t-2xl p-space-lg shadow-xl text-center">
+<div class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center mx-auto mb-space-sm">
+<span class="material-symbols-outlined text-[26px]">delete_forever</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">移除此水情标点？</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
+        移除后该钓点的水深测绘、障碍物标定以及历史出鱼统计将从本地档案中清除。
+      </p>
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 h-11 rounded-xl bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase font-bold" onclick="closeDeleteSheet()">
+          取消
+        </button>
+<button class="flex-1 h-11 rounded-xl bg-error text-on-error font-label-caps text-label-caps uppercase font-bold shadow-sm" id="confirmDeleteBtn" onclick="executeDeleteSpot()">
+          确认移除
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let pendingDeleteId = null;
+  let activeCategory = 'all';
+
+  function showToast(msg, icon = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+    if (!toast) return;
+    toastMsg.textContent = msg;
+    toastIcon.textContent = icon;
+    toast.classList.remove('opacity-0', '-translate-y-2');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', '-translate-y-2');
+    }, 2200);
+  }
+
+  function updateCounts() {
+    const cards = document.querySelectorAll('.spot-card');
+    const visibleCards = Array.from(cards).filter(c => !c.classList.contains('hidden'));
+    const totalCount = cards.length;
+    
+    const totalBadge = document.getElementById('totalBadgeCount');
+    if (totalBadge) totalBadge.textContent = totalCount;
+
+    const filteredBadge = document.getElementById('filteredCountText');
+    if (filteredBadge) {
+      filteredBadge.textContent = visibleCards.length + '处收录';
+    }
+
+    const emptyState = document.getElementById('spotsEmptyState');
+    if (visibleCards.length === 0) {
+      emptyState.classList.remove('hidden');
+    } else {
+      emptyState.classList.add('hidden');
+    }
+  }
+
+  function applyFilterAndSearch() {
+    const query = document.getElementById('spotSearchInput').value.trim().toLowerCase();
+    const cards = document.querySelectorAll('.spot-card');
+
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const text = card.textContent.toLowerCase();
+      const matchCat = activeCategory === 'all' || cat === activeCategory;
+      const matchSearch = !query || text.includes(query);
+
+      if (matchCat && matchSearch) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    const clearBtn = document.getElementById('clearSearchBtn');
+    if (clearBtn) {
+      if (query.length > 0) clearBtn.classList.remove('hidden');
+      else clearBtn.classList.add('hidden');
+    }
+
+    updateCounts();
+  }
+
+  // Category Tab Clicks
+  document.querySelectorAll('#categoryTagList .cat-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#categoryTagList .cat-pill').forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary');
+        b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary-container', 'text-on-primary');
+      btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      
+      activeCategory = btn.getAttribute('data-cat');
+      applyFilterAndSearch();
+    });
+  });
+
+  // Search Input Real-time
+  const searchInput = document.getElementById('spotSearchInput');
+  searchInput.addEventListener('input', applyFilterAndSearch);
+
+  document.getElementById('clearSearchBtn').addEventListener('click', () => {
+    searchInput.value = '';
+    applyFilterAndSearch();
+    searchInput.focus();
+  });
+
+  function resetFiltersAndSearch() {
+    document.getElementById('spotSearchInput').value = '';
+    activeCategory = 'all';
+    document.querySelectorAll('#categoryTagList .cat-pill').forEach(b => {
+      if (b.getAttribute('data-cat') === 'all') {
+        b.classList.add('bg-primary-container', 'text-on-primary');
+        b.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      } else {
+        b.classList.remove('bg-primary-container', 'text-on-primary');
+        b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      }
+    });
+    applyFilterAndSearch();
+    showToast('筛选条件已重置');
+  }
+
+  // Sort Logic
+  function handleSortChange(sortType) {
+    const container = document.getElementById('spotsListContainer');
+    const cards = Array.from(document.querySelectorAll('.spot-card'));
+
+    cards.sort((a, b) => {
+      if (sortType === 'score') {
+        return parseFloat(b.getAttribute('data-score') || 0) - parseFloat(a.getAttribute('data-score') || 0);
+      } else if (sortType === 'depth-desc') {
+        return parseFloat(b.getAttribute('data-depth') || 0) - parseFloat(a.getAttribute('data-depth') || 0);
+      } else if (sortType === 'depth-asc') {
+        return parseFloat(a.getAttribute('data-depth') || 0) - parseFloat(b.getAttribute('data-depth') || 0);
+      } else if (sortType === 'dist') {
+        return parseFloat(a.getAttribute('data-dist') || 0) - parseFloat(b.getAttribute('data-dist') || 0);
+      }
+      return 0;
+    });
+
+    cards.forEach(c => container.appendChild(c));
+    showToast('列表排列已更新');
+  }
+
+  // Highlight Spot Card from Chart Pin
+  function highlightSpotCard(cardId) {
+    const target = document.getElementById(cardId);
+    if (!target) return;
+    target.classList.remove('hidden');
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.classList.add('ring-2', 'ring-primary', 'bg-surface-container');
+    setTimeout(() => {
+      target.classList.remove('ring-2', 'ring-primary', 'bg-surface-container');
+    }, 1800);
+    showToast('已定位图例对应钓点水情');
+  }
+
+  // Star / Favorite Toggle
+  function toggleFavorite(id) {
+    const card = document.getElementById(`spot-${id}`);
+    if (!card) return;
+    const icon = card.querySelector('.fav-icon');
+    const isFav = icon.style.fontVariationSettings.includes("'FILL' 1");
+    if (isFav) {
+      icon.style.fontVariationSettings = "'FILL' 0";
+      icon.classList.remove('text-tertiary');
+      icon.classList.add('text-outline');
+      showToast('已取消标点收藏');
+    } else {
+      icon.style.fontVariationSettings = "'FILL' 1";
+      icon.classList.remove('text-outline');
+      icon.classList.add('text-tertiary');
+      showToast('已置入重点星标档案');
+    }
+  }
+
+  // Delete Flow
+  function requestDeleteSpot(id) {
+    pendingDeleteId = id;
+    document.getElementById('deleteConfirmSheet').classList.remove('hidden');
+  }
+
+  function closeDeleteSheet() {
+    pendingDeleteId = null;
+    document.getElementById('deleteConfirmSheet').classList.add('hidden');
+  }
+
+  function executeDeleteSpot() {
+    if (!pendingDeleteId) return;
+    const card = document.getElementById(`spot-${pendingDeleteId}`);
+    if (card) {
+      card.remove();
+      showToast('标点档案已永久移除', 'delete');
+      updateCounts();
+    }
+    closeDeleteSheet();
+  }
+
+  // Edit Spot Flow
+  function openEditModal(id) {
+    const card = document.getElementById(`spot-${id}`);
+    if (!card) return;
+    document.getElementById('editSpotId').value = id;
+    document.getElementById('editSpotTitle').value = card.querySelector('.spot-title').textContent.trim();
+    document.getElementById('editSpotDepth').value = card.querySelector('.spot-depth-display').textContent.trim();
+    document.getElementById('editSpotNote').value = card.querySelector('.spot-note').textContent.trim();
+    document.getElementById('editSpotModal').classList.remove('hidden');
+  }
+
+  function closeEditModal() {
+    document.getElementById('editSpotModal').classList.add('hidden');
+  }
+
+  function handleSaveEdit(e) {
+    e.preventDefault();
+    const id = document.getElementById('editSpotId').value;
+    const card = document.getElementById(`spot-${id}`);
+    if (card) {
+      const newTitle = document.getElementById('editSpotTitle').value;
+      const newDepth = document.getElementById('editSpotDepth').value;
+      const newNote = document.getElementById('editSpotNote').value;
+
+      card.querySelector('.spot-title').textContent = newTitle;
+      card.querySelector('.spot-depth-display').textContent = newDepth;
+      card.querySelector('.spot-note').textContent = newNote;
+
+      const numericDepth = parseFloat(newDepth) || 3.0;
+      card.setAttribute('data-depth', numericDepth);
+      showToast('钓点水深与实战心得已同步');
+    }
+    closeEditModal();
+  }
+
+  // Add Spot Flow
+  function openAddSpotModal() {
+    document.getElementById('newSpotForm').reset();
+    document.getElementById('addSpotModal').classList.remove('hidden');
+  }
+
+  function closeAddSpotModal() {
+    document.getElementById('addSpotModal').classList.add('hidden');
+  }
+
+  function handleCreateSpot(e) {
+    e.preventDefault();
+    const title = document.getElementById('newSpotTitle').value.trim();
+    const depth = document.getElementById('newSpotDepth').value.trim();
+    const cat = document.getElementById('newSpotCategory').value;
+    const bottom = document.getElementById('newSpotBottom').value.trim() || '未明确探底';
+    const target = document.getElementById('newSpotTarget').value.trim() || '综合淡水鱼种';
+    const note = document.getElementById('newSpotNote').value.trim() || '初次记录标点，待实战测试窗口期。';
+
+    const newId = Date.now();
+    const numericDepth = parseFloat(depth) || 2.5;
+
+    const newCard = document.createElement('article');
+    newCard.id = `spot-${newId}`;
+    newCard.setAttribute('data-id', newId);
+    newCard.setAttribute('data-category', cat);
+    newCard.setAttribute('data-depth', numericDepth);
+    newCard.setAttribute('data-score', '75');
+    newCard.setAttribute('data-dist', '1.2');
+    newCard.className = 'spot-card relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300';
+
+    newCard.innerHTML = `
+      <div class="flex items-start justify-between gap-space-sm mb-space-xs">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-caps text-[11px] font-bold flex items-center justify-center flex-shrink-0">★</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface truncate spot-title">${title}</h3>
+        </div>
+        <div class="flex items-center gap-1 flex-shrink-0">
+          <button onclick="toggleFavorite(${newId})" class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-tertiary transition-colors" title="星标关注">
+            <span class="material-symbols-outlined text-[18px] text-tertiary fav-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+          </button>
+          <button onclick="openEditModal(${newId})" class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-primary transition-colors" title="修改参数">
+            <span class="material-symbols-outlined text-[18px]">edit_note</span>
+          </button>
+          <button onclick="requestDeleteSpot(${newId})" class="w-7 h-7 rounded-xl flex items-center justify-center text-outline hover:text-error transition-colors" title="删除标点">
+            <span class="material-symbols-outlined text-[18px]">delete_outline</span>
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-1.5 mb-space-sm">
+        <span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-caps text-[11px] font-semibold flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          新录入标点
+        </span>
+        <span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-data-sm text-[11px] ml-auto font-medium">距当前 1.2km</span>
+      </div>
+      <div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-sm rounded-xl mb-space-sm">
+        <div class="flex flex-col">
+          <span class="font-label-caps text-[10px] text-on-surface-variant uppercase">适宜标靶水深</span>
+          <span class="font-label-data-md text-label-data-md text-primary font-bold spot-depth-display">${depth}</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-label-caps text-[10px] text-on-surface-variant uppercase">水底底质</span>
+          <span class="font-label-data-sm text-label-data-sm text-on-surface font-medium spot-bottom-display">${bottom}</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-label-caps text-[10px] text-on-surface-variant uppercase">优势主攻鱼种</span>
+          <span class="font-label-data-sm text-label-data-sm text-tertiary font-bold spot-target-display">${target}</span>
+        </div>
+      </div>
+      <div class="flex items-start gap-1.5 text-on-surface-variant text-body-sm font-body-sm bg-surface-container-lowest p-1">
+        <span class="material-symbols-outlined text-[16px] text-primary mt-0.5">bookmark</span>
+        <p class="spot-note leading-relaxed">${note}</p>
+      </div>
+    `;
+
+    const container = document.getElementById('spotsListContainer');
+    container.prepend(newCard);
+
+    closeAddSpotModal();
+    applyFilterAndSearch();
+    showToast('新钓点勘测数据已入库！');
+  }
+
+  // Initial check
+  updateCounts();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-[env(safe-area-inset-bottom,0px)] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,50,61,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-1"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="workstation" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-caps text-[10px]">工作台</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-all gap-0.5 text-primary-container font-semibold" data-path="spots" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-caps text-[10px]">钓点水情</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="logs" href="#"><span class="material-symbols-outlined text-[22px]">phishing</span><span class="font-label-caps text-[10px]">渔获记录</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="insights" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-caps text-[10px]">深度洞察</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="tackle" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-caps text-[10px]">装备图鉴</span></a></div></nav></body></html>

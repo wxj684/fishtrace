@@ -1,0 +1,6 @@
+{
+  "name": "鱼迹 FishTrace - 水文与作钓决策工作台",
+  "description": "专业野钓水文测绘、精准标点气压水温监控、鱼情规律归纳与钓组装备数字化实战工作台",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

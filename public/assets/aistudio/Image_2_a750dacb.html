@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f3faff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 4.5rem);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#c9e7f6", "inverse-on-surface": "#def4ff", "on-surface-variant": "#3f484c", "inverse-surface": "#16343f", "tertiary-fixed-dim": "#ffb59c", "surface-container-high": "#ceedfb", "surface-tint": "#13667f", "tertiary-fixed": "#ffdbcf", "error": "#ba1a1a", "on-tertiary": "#ffffff", "on-error": "#ffffff", "outline-variant": "#bfc8cd", "on-tertiary-fixed": "#390c00", "surface-dim": "#c0dfed", "outline": "#70787d", "secondary-fixed": "#bbe9ff", "primary-fixed-dim": "#8bd0ec", "on-primary-fixed-variant": "#004d62", "on-secondary-fixed": "#001f29", "surface-container-low": "#e5f6ff", "on-error-container": "#93000a", "inverse-primary": "#8bd0ec", "on-tertiary-container": "#ffe4dc", "tertiary": "#942e00", "on-primary-container": "#cbefff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#194c5e", "secondary-fixed-dim": "#9ecde3", "on-primary-fixed": "#001f29", "secondary-container": "#b7e7fd", "surface-container-lowest": "#ffffff", "on-secondary-container": "#39697b", "on-primary": "#ffffff", "secondary": "#356477", "primary-fixed": "#b9eaff", "on-background": "#001f29", "surface-bright": "#f3faff", "surface-container": "#d7f2ff", "primary-container": "#24718a", "background": "#f3faff", "tertiary-container": "#ba400a", "on-surface": "#001f29", "on-tertiary-fixed-variant": "#822700", "surface-container-highest": "#c9e7f6", "surface": "#f3faff", "on-secondary": "#ffffff", "primary": "#00586f" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "space-lg": "1rem", "space-xs": "0.25rem", "margin": "1rem", "gutter": "0.75rem" }, "fontFamily": { "label-data-sm": ["JetBrains Mono"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-data-md": ["JetBrains Mono"], "label-data-lg": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"] }, "fontSize": { "label-data-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["17px", { "lineHeight": "24px", "fontWeight": "600" }], "label-data-md": ["16px", { "lineHeight": "20px", "fontWeight": "500" }], "label-data-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,50,61,0.05)] pt-safe"><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="鱼迹 App Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi_4Lqu-BP5_3l_Qplx3g8erdHlKdwnXPkv2vuU4ZPAexNoQgpvu9WrGhpuLuiNOYzSN8gry_LNXsQ2X5Q4Xbitlo2FZre_f44zuPpKPJydIPf7Os1g_zhJbW1UFgQvrDvDx4hzK99kM_V4_0Z9MZcj87S6HpCzjvuY8p1p3fhaM5_xkNrmZfsB4pHsZ1Aot-QXpogYf31rfG3TfcTfhQcBP27r41iYHW_ouZ7jTEFH_4fUn7ehGZAtA"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">鱼迹</span><span class="font-label-caps text-label-caps text-primary tracking-wider uppercase font-semibold hidden xs:inline">FishTrace</span></div><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-data-sm text-[10px] text-on-surface-variant truncate">1013hPa · 18.5℃ 旺咬</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button class="h-8 px-2 rounded-xl bg-surface-container flex items-center gap-1 text-primary hover:bg-surface-container-high transition-colors" title="云端已同步"><span class="material-symbols-outlined text-[16px]">cloud_done</span><span class="font-label-caps text-label-caps text-primary uppercase">SYNC</span></button><button class="h-8 px-2 rounded-xl bg-primary-container text-on-primary flex items-center gap-1 shadow-sm hover:opacity-95 transition-opacity" title="出钓计时"><span class="material-symbols-outlined text-[16px]">timer</span><span class="font-label-data-sm text-label-data-sm font-semibold">02:45</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Top Hydro & Telemetry Strip (Paper tactile surface with hairline accents) -->
+<section class="px-margin pt-space-md pb-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Location & Sync Beacon -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container animate-pulse">place</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">千岛湖·界首湾桦树林回水湾</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-caps text-label-caps uppercase tracking-wider shrink-0 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 活跃水区
+        </span>
+</div>
+<!-- Real-time Water & Weather Gauge Cards -->
+<div class="grid grid-cols-4 gap-gutter bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col items-center justify-center p-1 bg-surface-container-lowest rounded">
+<span class="font-label-caps text-label-caps text-on-surface-variant">表层水温</span>
+<span class="font-label-data-md text-label-data-md font-semibold text-primary mt-0.5">18.4℃</span>
+<span class="text-[9px] font-mono text-secondary mt-0.5">温差 -0.2</span>
+</div>
+<div class="flex flex-col items-center justify-center p-1 bg-surface-container-lowest rounded">
+<span class="font-label-caps text-label-caps text-on-surface-variant">定点气压</span>
+<span class="font-label-data-md text-label-data-md font-semibold text-primary mt-0.5">1014<span class="text-[10px]">hPa</span></span>
+<span class="text-[9px] font-mono text-tertiary-container mt-0.5 flex items-center">↑ 旺咬期</span>
+</div>
+<div class="flex flex-col items-center justify-center p-1 bg-surface-container-lowest rounded">
+<span class="font-label-caps text-label-caps text-on-surface-variant">风向/风力</span>
+<span class="font-label-data-md text-label-data-md font-semibold text-primary mt-0.5">东南 2级</span>
+<span class="text-[9px] font-mono text-secondary mt-0.5">轻拂微澜</span>
+</div>
+<div class="flex flex-col items-center justify-center p-1 bg-surface-container-lowest rounded">
+<span class="font-label-caps text-label-caps text-on-surface-variant">水色/透光</span>
+<span class="font-label-data-md text-label-data-md font-semibold text-primary mt-0.5">1.2<span class="text-[10px]">m</span></span>
+<span class="text-[9px] font-mono text-secondary mt-0.5">微浑沉实</span>
+</div>
+</div>
+<!-- Monthly Empirical Science Dashboard -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between pb-1.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">query_stats</span>
+            本月作钓经验沉淀 · 决策效能
+          </span>
+<span class="font-label-caps text-label-caps text-secondary font-mono">OCTOBER METRICS</span>
+</div>
+<div class="grid grid-cols-4 gap-gutter text-center">
+<div class="p-2 bg-surface-container rounded-lg">
+<div class="font-label-caps text-label-caps text-on-surface-variant">出钓频次</div>
+<div class="font-label-data-lg text-label-data-lg text-on-surface font-bold">09<span class="text-[12px] font-normal font-sans ml-0.5">次</span></div>
+</div>
+<div class="p-2 bg-surface-container rounded-lg">
+<div class="font-label-caps text-label-caps text-on-surface-variant">累计渔获</div>
+<div class="font-label-data-lg text-label-data-lg text-primary font-bold">42.8<span class="text-[12px] font-normal font-sans ml-0.5">kg</span></div>
+</div>
+<div class="p-2 bg-surface-container rounded-lg">
+<div class="font-label-caps text-label-caps text-on-surface-variant">中大鱼率</div>
+<div class="font-label-data-lg text-label-data-lg text-tertiary font-bold">38<span class="text-[12px] font-normal font-sans ml-0.5">%</span></div>
+</div>
+<div class="p-2 bg-surface-container rounded-lg">
+<div class="font-label-caps text-label-caps text-on-surface-variant">历史空军率</div>
+<div class="font-label-data-lg text-label-data-lg text-secondary-container text-primary-container font-bold">04<span class="text-[12px] font-normal font-sans ml-0.5">%</span></div>
+</div>
+</div>
+<div class="mt-2 text-center">
+<p class="font-label-caps text-[11px] text-on-surface-variant">“把每一次抛竿，变成下一次的准确判断”</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Scenario & Mission in Progress (Hero Card with Action triggers) -->
+<section class="px-margin py-space-xs">
+<div class="relative rounded-xl overflow-hidden shadow-md bg-inverse-surface text-inverse-on-surface">
+<!-- Scenic Background Image -->
+<div class="h-56 w-full bg-cover bg-center relative" data-alt="Serene misty autumn lake shore at sunrise, fishing rod on stainless stand extended over calm rippling water with distant pine trees and fog, outdoor angler equipment bag and stainless thermos, soft golden early morning backlight, tactile nature documentary style" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1c0l_k-O5Cq6jUFB60D2qY4cXMHfGo5fuAa0jjyBVHSba_ne_kATkD6wC7EZIymBrJtWdQ-1bkH9CztmnQYIXB1MBi8Yau8iC-ZCE4vtZ2mC7sNVptcF9VFUeNnMfBqhrftHJdOlevwuDOhV3JkFQYl7yNjvoPMhT7GkV2NfZfTdGjDkqEUL_g4UsujuGSAZkMiv_vsxJM0DXbj5hGlLart2GK2WUVfFVxrM5sGSejuYeT3Nkj273Hg')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent"></div>
+<div class="absolute top-3 left-3 px-2 py-1 rounded bg-inverse-surface/80 backdrop-blur-md flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed font-semibold">标点巡检中 · 3号老钓位</span>
+</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded bg-inverse-surface/80 backdrop-blur-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">water</span>
+<span class="font-label-caps text-label-caps text-primary-fixed">深水底层 (3.4m)</span>
+</div>
+</div>
+<!-- Float State & Active Window Countdown Container -->
+<div class="p-space-lg flex flex-col gap-space-md -mt-10 relative z-10 bg-inverse-surface/95 backdrop-blur-md rounded-t-xl mx-2 shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-inverse-on-surface/70 uppercase">野钓黄金窗口倒计时</span>
+<span class="font-label-data-lg text-label-data-lg text-primary-fixed font-bold tracking-tight" id="windowTimer">01:42:18</span>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-inverse-on-surface/70">浮漂动态建议</span>
+<div class="font-headline-sm text-headline-sm text-surface-bright flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">vertical_align_bottom</span>
+              抓半目钝口 / 顿口
+            </div>
+</div>
+</div>
+<!-- Micro Tactical Action Dock -->
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<button class="h-11 px-space-md rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center gap-2 hover:bg-surface-variant active:scale-95 transition-all text-left" id="btnChumTimer">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<div class="flex flex-col">
+<span class="font-label-data-sm text-[12px] font-bold leading-tight">一键打窝计时</span>
+<span class="text-[10px] text-on-surface-variant font-mono" id="chumStatus">已补窝 25min 前</span>
+</div>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center gap-2 shadow-sm hover:opacity-95 active:scale-95 transition-all" id="btnQuickStrike">
+<span class="material-symbols-outlined text-[22px] animate-bounce">phishing</span>
+<span class="font-label-data-md text-label-data-md font-bold tracking-wide">记录当前抛竿</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Task Checklist & Recent Trophy Spotlight -->
+<section class="px-margin py-space-sm flex flex-col gap-space-md">
+<!-- Header with dynamic task counter -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">checklist</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">今日出钓优先级待办</h2>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-high text-primary font-bold" id="taskProgressBadge">已落实 0/2 项</span>
+</div>
+<!-- Interactive Task Items -->
+<div class="flex flex-col gap-space-sm">
+<label class="task-card flex items-start gap-space-md p-space-md bg-surface-container-lowest rounded-lg cursor-pointer transition-all shadow-sm">
+<input class="task-checkbox mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" data-id="1" type="checkbox"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="task-title font-body-md text-body-md font-semibold text-on-surface">测试新绑 0.8# 溪流子线配伊势尼4号</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-secondary">细线应对滑口</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">针对深秋回水湾轻口野生鲫鱼，测试吸入阻力与提竿正口率</p>
+</div>
+</label>
+<label class="task-card flex items-start gap-space-md p-space-md bg-surface-container-lowest rounded-lg cursor-pointer transition-all shadow-sm">
+<input class="task-checkbox mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" data-id="2" type="checkbox"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="task-title font-body-md text-body-md font-semibold text-on-surface">复测南湾水底深槽落差 (探底沉子比对)</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed">地形复勘</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">排查距岸 11m 处台阶边缘是否淤积水草，校验等深水线吻合度</p>
+</div>
+</label>
+</div>
+<!-- Trophy Featured Card (Clickable to reveal modal) -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex gap-space-md items-center cursor-pointer hover:bg-surface-container transition-all" id="trophyCard">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Large wild golden carp freshly caught resting in black mesh landing net on wet wooden dock platform with yellow metric fish measure ruler tape alongside, macro angling trophy shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu7gqkw-D7GE_3vKJ00ytuNao8J0WYJqleqt5YpcNUmP5opzrmpUnmWXy9UpBPns0TnRE3DGTVsk0rWUGgNnMr0Orko-rgfQbFFkL08p6IgOpMWTJ4CzmN_-_McbAY1Lf1JPiVEWx4H3zBdwwWF0GgWMlYnuCmSXA7Cm8n8Uc5h3M-L5hCW6WD_QgyoeauvKHd5Tv8kTHQ-2brptFzeMsAJDJndD8jWHmj1fceDI9aKSNOd4zItNy5yQ"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]">military_tech</span>
+<span class="font-label-caps text-label-caps text-tertiary-container font-bold">巨物战报归档</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant font-mono ml-auto">YESTERDAY 16:40</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">野生大鲤 6.40kg / 68cm</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">发酵嫩甜玉米 · 5.4米轻量综合竿 · 3.4m深槽台阶处</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-[10px] px-2 py-0.5 rounded bg-surface-container-lowest text-primary font-mono font-medium">PE #1.2 / 碳线 2.5#</span>
+<span class="font-label-caps text-[10px] text-primary flex items-center gap-0.5 ml-auto">查看复盘参数 <span class="material-symbols-outlined text-[14px]">chevron_right</span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bathymetric & Field Log Timeline (3 Real interconnected records) -->
+<section class="px-margin py-space-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">近期水情与渔获动态</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-mono">共记录 32 组标定数据</span>
+</div>
+<div class="flex flex-col gap-gutter" id="logList">
+<!-- Record 1 -->
+<div class="catch-item p-space-md bg-surface-container-lowest rounded-xl flex flex-col gap-space-xs shadow-sm cursor-pointer hover:bg-surface-container-low transition-colors" data-note="深秋水温骤降前的暴食窗口，中鱼瞬间向深槽外窜拉力凶猛，遛鱼8分钟抄网入护。" data-species="野生大鲤" data-tackle="5.4米轻量综合竿 / 甜玉米" data-time="昨日 16:40" data-weight="6.4kg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">野生大鲤</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-tertiary px-1.5 py-0.2 rounded bg-tertiary-fixed">6.4 kg</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-mono">昨天 16:40</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[15px] text-primary">set_meal</span>
+<span>谷麦嫩玉米 · 底钓守候</span>
+</div>
+<span class="font-mono text-[11px] text-secondary shrink-0">水深 3.4m · 钝口中正口</span>
+</div>
+</div>
+<!-- Record 2 -->
+<div class="catch-item p-space-md bg-surface-container-lowest rounded-xl flex flex-col gap-space-xs shadow-sm cursor-pointer hover:bg-surface-container-low transition-colors" data-note="湖面晨雾刚散时在桦树林向外延伸铧尖处水表炸水，平收配合轻抽瞬即截口。" data-species="翘嘴鲌 (Culter alburnus)" data-tackle="微物路亚竿 / 7g银色亮片" data-time="前天 07:15" data-weight="0.95kg (38cm)">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">翘嘴鲌</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-primary px-1.5 py-0.2 rounded bg-surface-container">38 cm</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-mono">前天 07:15</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[15px] text-primary">20mp</span>
+<span>7g微物斜切亮片 · 表层快速搜寻</span>
+</div>
+<span class="font-mono text-[11px] text-secondary shrink-0">桦尖急流水面 · 凶猛截口</span>
+</div>
+</div>
+<!-- Record 3 -->
+<div class="catch-item p-space-md bg-surface-container-lowest rounded-xl flex flex-col gap-space-xs shadow-sm cursor-pointer hover:bg-surface-container-low transition-colors" data-note="西侧草窝边避风回流区，发酵酒米打底后使用鲜活红虫做钓，送漂2目动作极为利索。" data-species="野生土鲫群" data-tackle="4.5米大物鲫竿 / 蚯蚓红虫包食" data-time="3天前 09:20" data-weight="12尾 (累计1.8kg)">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface">野生土鲫 12尾</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-on-surface px-1.5 py-0.2 rounded bg-surface-container-high">共 1.8 kg</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-mono">3天前 09:20</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[15px] text-primary">eco</span>
+<span>自制中药酒米 · 活饵蘸粉</span>
+</div>
+<span class="font-mono text-[11px] text-secondary shrink-0">草洞近岸 1.8m · 顶漂正口</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bathymetric Lake Map Preview Block -->
+<section class="px-margin py-space-sm mb-4">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">map</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">桦树林水下等深结构剖面图</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary cursor-pointer hover:underline flex items-center gap-0.5">
+          全图解算 <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</span>
+</div>
+<div class="w-full h-36 rounded-lg overflow-hidden relative" data-alt="Topographic bathymetric nautical depth contour chart map of deep lake reservoir bay with contour depth lines water channels markers in navy teal and cyan hues, scientific hydrology workbench presentation" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3j5R4F09_KSaVwiVsI-_fLKTAHSL8IUZwT9Ld_lW8pR2peiR0SqOJGvTI4X3pf_STJ8dw64oJr5WWv0I4aLPyn3JlNJi8za2lhhlmcq76NZYBbSMhyYvVk2d_vUtKsf40uWCs2tjFZvwMkAGEVE8Ds9ixZuN3CLL5qG5eRywsmxC35aTrA-nkURheBkZyTauet8GcOK6N4zqGZ8ZjzzCL-_EVFOcgLYitd-BXExRcNTmc81amr3JRKw')">
+<div class="absolute inset-0 bg-surface-tint/10"></div>
+<div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-inverse-surface/85 text-inverse-on-surface text-[10px] font-mono flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span> 现标点：桦树林3号 (北纬29°36′ / 东经118°58′)
+        </div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-label-caps text-[10px] text-primary font-bold">
+          等深落差: 0.5m ~ 18.2m
+        </div>
+</div>
+</div>
+</section>
+<!-- Modal: Catch Record Details & Review -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-margin" id="detailModal">
+<div class="bg-surface-container-lowest rounded-2xl w-full max-w-sm p-space-lg shadow-xl flex flex-col gap-space-md animate-scaleUp">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-headline-md text-headline-md" id="modalTitle">作钓记录复盘</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface" id="modalCloseBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
+<span>记录渔获物种</span>
+<span class="font-bold text-on-surface font-headline-sm" id="modalSpecies">-</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
+<span>重量 / 规格</span>
+<span class="font-label-data-md text-label-data-md font-bold text-tertiary-container" id="modalWeight">-</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
+<span>线组竿型配备</span>
+<span class="font-mono text-on-surface text-right truncate max-w-[180px]" id="modalTackle">-</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
+<span>时间与水文窗口</span>
+<span class="font-mono text-on-surface" id="modalTime">-</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">作钓经验总结</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed p-2.5 bg-surface-container-lowest rounded-lg border-0" id="modalNote">
+          数据加载中...
+        </p>
+</div>
+<button class="w-full h-11 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all" id="modalActionConfirm">
+<span class="material-symbols-outlined text-[18px]">check</span> 已标记为实测标定模型
+      </button>
+</div>
+</div>
+<!-- Modal: Quick Strike Log Prompt -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-margin" id="quickLogModal">
+<div class="bg-surface-container-lowest rounded-2xl w-full max-w-sm p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-tertiary-container">add_circle</span>
+<span class="font-headline-md text-headline-md">快速记一次有效抛竿</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface" id="quickLogClose">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">系统已自动关联当前环境：1014hPa · 18.4℃ · 水深 3.4m</p>
+<div class="flex flex-col gap-space-sm">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant">目标中鱼类型</label>
+<div class="grid grid-cols-3 gap-2 mt-1">
+<button class="fish-pill py-2 text-center rounded bg-surface-container-high text-primary font-body-sm font-semibold hover:bg-primary hover:text-on-primary active:scale-95 transition-all" data-type="野生鲤鱼" type="button">野生鲤鱼</button>
+<button class="fish-pill py-2 text-center rounded bg-surface-container text-on-surface font-body-sm hover:bg-primary hover:text-on-primary active:scale-95 transition-all" data-type="大鲫鱼" type="button">大鲫鱼</button>
+<button class="fish-pill py-2 text-center rounded bg-surface-container text-on-surface font-body-sm hover:bg-primary hover:text-on-primary active:scale-95 transition-all" data-type="鲌鱼翘嘴" type="button">鲌鱼翘嘴</button>
+</div>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant">咬钩信号特征</label>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<button class="signal-pill py-1.5 px-2 rounded bg-surface-container-high text-primary text-center font-label-data-sm text-[12px]" data-sig="清脆下顿 (正口)" type="button">清脆下顿 (正口)</button>
+<button class="signal-pill py-1.5 px-2 rounded bg-surface-container text-on-surface text-center font-label-data-sm text-[12px]" data-sig="平稳送漂 (底层)" type="button">平稳送漂 (底层)</button>
+</div>
+</div>
+</div>
+<button class="w-full h-11 rounded-xl bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all mt-1" id="btnSubmitQuickLog">
+<span class="material-symbols-outlined text-[18px]">save</span> 确认入库并更新命中率
+      </button>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed top-16 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-inverse-surface text-inverse-on-surface shadow-lg text-[13px] font-medium flex items-center gap-2 pointer-events-none transition-all duration-300 opacity-0 -translate-y-2" id="toast">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">check_circle</span>
+<span id="toastText">操作成功</span>
+</div>
+</div>
+<script>
+  (function initFishTraceWorkstation() {
+    // Toast Helper
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toastText');
+    function showToast(msg) {
+      if (!toast) return;
+      toastText.textContent = msg;
+      toast.classList.remove('opacity-0', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-2');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2200);
+    }
+
+    // 1. Interactive Tasks Checkboxes
+    const taskCheckboxes = document.querySelectorAll('.task-checkbox');
+    const progressBadge = document.getElementById('taskProgressBadge');
+    
+    function updateTasks() {
+      const total = taskCheckboxes.length;
+      let checkedCount = 0;
+      taskCheckboxes.forEach(cb => {
+        const title = cb.closest('label').querySelector('.task-title');
+        if (cb.checked) {
+          checkedCount++;
+          title.classList.add('line-through', 'text-on-surface-variant');
+        } else {
+          title.classList.remove('line-through', 'text-on-surface-variant');
+        }
+      });
+      if (progressBadge) {
+        progressBadge.textContent = `已落实 ${checkedCount}/${total} 项`;
+        if (checkedCount === total) {
+          progressBadge.classList.remove('bg-surface-container-high', 'text-primary');
+          progressBadge.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+          showToast('太棒了！今日出钓优先级任务已全部执行');
+        } else {
+          progressBadge.classList.add('bg-surface-container-high', 'text-primary');
+          progressBadge.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+        }
+      }
+    }
+
+    taskCheckboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        updateTasks();
+        if (cb.checked) {
+          showToast('标点待办已完成更新并计入实测沉淀');
+        }
+      });
+    });
+
+    // 2. Chum Timer Button Interaction
+    const btnChumTimer = document.getElementById('btnChumTimer');
+    const chumStatus = document.getElementById('chumStatus');
+    let chumMinutes = 25;
+    if (btnChumTimer && chumStatus) {
+      btnChumTimer.addEventListener('click', () => {
+        chumMinutes = 0;
+        chumStatus.textContent = '刚刚已精准补窝';
+        chumStatus.classList.add('text-tertiary-container', 'font-bold');
+        showToast('打窝计时已重置：建议 40min 后观察漂相进窝');
+      });
+    }
+
+    // 3. Modals and Catch Items inspection
+    const detailModal = document.getElementById('detailModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalActionConfirm = document.getElementById('modalActionConfirm');
+    const modalSpecies = document.getElementById('modalSpecies');
+    const modalWeight = document.getElementById('modalWeight');
+    const modalTackle = document.getElementById('modalTackle');
+    const modalTime = document.getElementById('modalTime');
+    const modalNote = document.getElementById('modalNote');
+    
+    function openLogModal(data) {
+      if (!detailModal) return;
+      modalSpecies.textContent = data.species || '未知';
+      modalWeight.textContent = data.weight || '-';
+      modalTackle.textContent = data.tackle || '-';
+      modalTime.textContent = data.time || '-';
+      modalNote.textContent = data.note || '暂无详细记录';
+      detailModal.classList.remove('hidden');
+    }
+
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', () => {
+        detailModal.classList.add('hidden');
+      });
+    }
+    if (modalActionConfirm) {
+      modalActionConfirm.addEventListener('click', () => {
+        detailModal.classList.add('hidden');
+        showToast('已完成参数标定并与云端水文库同步');
+      });
+    }
+
+    // Catch items click
+    const catchItems = document.querySelectorAll('.catch-item');
+    catchItems.forEach(item => {
+      item.addEventListener('click', () => {
+        openLogModal({
+          species: item.dataset.species,
+          weight: item.dataset.weight,
+          tackle: item.dataset.tackle,
+          time: item.dataset.time,
+          note: item.dataset.note
+        });
+      });
+    });
+
+    // Trophy card click
+    const trophyCard = document.getElementById('trophyCard');
+    if (trophyCard) {
+      trophyCard.addEventListener('click', () => {
+        openLogModal({
+          species: '野生大鲤 (Cyprinus carpio)',
+          weight: '6.40 kg / 68 cm',
+          tackle: '5.4m轻量综合竿 / 甜玉米 / 0.8# PE',
+          time: '昨日 16:40 (秋温下探期)',
+          note: '界首湾老桦树根部 3.4m 深浅交汇凹槽。经等深线雷达比对，此处为典型回水滞留水洼，大鲤于日落前1小时出槽觅食。'
+        });
+      });
+    }
+
+    // 4. Quick Strike Prompt Modal
+    const quickLogModal = document.getElementById('quickLogModal');
+    const btnQuickStrike = document.getElementById('btnQuickStrike');
+    const quickLogClose = document.getElementById('quickLogClose');
+    const btnSubmitQuickLog = document.getElementById('btnSubmitQuickLog');
+
+    if (btnQuickStrike && quickLogModal) {
+      btnQuickStrike.addEventListener('click', () => {
+        quickLogModal.classList.remove('hidden');
+      });
+    }
+    if (quickLogClose && quickLogModal) {
+      quickLogClose.addEventListener('click', () => {
+        quickLogModal.classList.add('hidden');
+      });
+    }
+    if (btnSubmitQuickLog && quickLogModal) {
+      btnSubmitQuickLog.addEventListener('click', () => {
+        quickLogModal.classList.add('hidden');
+        showToast('抛竿记录已入库！经验判断模型拟合中...');
+      });
+    }
+
+    // Modal Pill Selectors
+    document.querySelectorAll('.fish-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.fish-pill').forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary');
+          b.classList.add('bg-surface-container', 'text-on-surface');
+        });
+        btn.classList.add('bg-primary', 'text-on-primary');
+        btn.classList.remove('bg-surface-container', 'text-on-surface');
+      });
+    });
+
+    document.querySelectorAll('.signal-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.signal-pill').forEach(b => {
+          b.classList.remove('bg-surface-container-high', 'text-primary');
+          b.classList.add('bg-surface-container', 'text-on-surface');
+        });
+        btn.classList.add('bg-surface-container-high', 'text-primary');
+        btn.classList.remove('bg-surface-container', 'text-on-surface');
+      });
+    });
+
+    // 5. Active Window Timer Micro-decrement
+    let secondsLeft = 1 * 3600 + 42 * 60 + 18;
+    const windowTimerEl = document.getElementById('windowTimer');
+    if (windowTimerEl) {
+      setInterval(() => {
+        if (secondsLeft > 0) {
+          secondsLeft--;
+          const hrs = String(Math.floor(secondsLeft / 3600)).padStart(2, '0');
+          const mins = String(Math.floor((secondsLeft % 3600) / 60)).padStart(2, '0');
+          const secs = String(secondsLeft % 60).padStart(2, '0');
+          windowTimerEl.textContent = `${hrs}:${mins}:${secs}`;
+        }
+      }, 1000);
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-[env(safe-area-inset-bottom,0px)] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,50,61,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-1"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-all gap-0.5 text-primary-container font-semibold" data-path="workstation" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-caps text-[10px]">工作台</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="spots" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-caps text-[10px]">钓点水情</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="logs" href="#"><span class="material-symbols-outlined text-[22px]">phishing</span><span class="font-label-caps text-[10px]">渔获记录</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="insights" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-caps text-[10px]">深度洞察</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="tackle" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-caps text-[10px]">装备图鉴</span></a></div></nav></body></html>

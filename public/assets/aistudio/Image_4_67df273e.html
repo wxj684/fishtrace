@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f3faff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 4.5rem);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#c9e7f6", "inverse-on-surface": "#def4ff", "on-surface-variant": "#3f484c", "inverse-surface": "#16343f", "tertiary-fixed-dim": "#ffb59c", "surface-container-high": "#ceedfb", "surface-tint": "#13667f", "tertiary-fixed": "#ffdbcf", "error": "#ba1a1a", "on-tertiary": "#ffffff", "on-error": "#ffffff", "outline-variant": "#bfc8cd", "on-tertiary-fixed": "#390c00", "surface-dim": "#c0dfed", "outline": "#70787d", "secondary-fixed": "#bbe9ff", "primary-fixed-dim": "#8bd0ec", "on-primary-fixed-variant": "#004d62", "on-secondary-fixed": "#001f29", "surface-container-low": "#e5f6ff", "on-error-container": "#93000a", "inverse-primary": "#8bd0ec", "on-tertiary-container": "#ffe4dc", "tertiary": "#942e00", "on-primary-container": "#cbefff", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#194c5e", "secondary-fixed-dim": "#9ecde3", "on-primary-fixed": "#001f29", "secondary-container": "#b7e7fd", "surface-container-lowest": "#ffffff", "on-secondary-container": "#39697b", "on-primary": "#ffffff", "secondary": "#356477", "primary-fixed": "#b9eaff", "on-background": "#001f29", "surface-bright": "#f3faff", "surface-container": "#d7f2ff", "primary-container": "#24718a", "background": "#f3faff", "tertiary-container": "#ba400a", "on-surface": "#001f29", "on-tertiary-fixed-variant": "#822700", "surface-container-highest": "#c9e7f6", "surface": "#f3faff", "on-secondary": "#ffffff", "primary": "#00586f" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "space-lg": "1rem", "space-xs": "0.25rem", "margin": "1rem", "gutter": "0.75rem" }, "fontFamily": { "label-data-sm": ["JetBrains Mono"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Space Grotesk"], "headline-lg": ["Space Grotesk"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-data-md": ["JetBrains Mono"], "label-data-lg": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"] }, "fontSize": { "label-data-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["17px", { "lineHeight": "24px", "fontWeight": "600" }], "label-data-md": ["16px", { "lineHeight": "20px", "fontWeight": "500" }], "label-data-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(20,50,61,0.05)] pt-safe"><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="鱼迹 App Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi_4Lqu-BP5_3l_Qplx3g8erdHlKdwnXPkv2vuU4ZPAexNoQgpvu9WrGhpuLuiNOYzSN8gry_LNXsQ2X5Q4Xbitlo2FZre_f44zuPpKPJydIPf7Os1g_zhJbW1UFgQvrDvDx4hzK99kM_V4_0Z9MZcj87S6HpCzjvuY8p1p3fhaM5_xkNrmZfsB4pHsZ1Aot-QXpogYf31rfG3TfcTfhQcBP27r41iYHW_ouZ7jTEFH_4fUn7ehGZAtA"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight whitespace-nowrap">鱼迹</span><span class="font-label-caps text-label-caps text-primary tracking-wider uppercase font-semibold hidden xs:inline">FishTrace</span></div><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-data-sm text-[10px] text-on-surface-variant truncate">1013hPa · 18.5℃ 旺咬</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button class="h-8 px-2 rounded-xl bg-surface-container flex items-center gap-1 text-primary hover:bg-surface-container-high transition-colors" title="云端已同步"><span class="material-symbols-outlined text-[16px]">cloud_done</span><span class="font-label-caps text-label-caps text-primary uppercase">SYNC</span></button><button class="h-8 px-2 rounded-xl bg-primary-container text-on-primary flex items-center gap-1 shadow-sm hover:opacity-95 transition-opacity" title="出钓计时"><span class="material-symbols-outlined text-[16px]">timer</span><span class="font-label-data-sm text-label-data-sm font-semibold">02:45</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- 统计概览仪表板 (Summary Telemetry) -->
+<section class="px-margin pt-space-md pb-space-sm">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Logbook Telemetry / 季度概览</span>
+</div>
+<span class="font-label-data-sm text-label-data-sm text-primary font-semibold">Q2 · 实战归档</span>
+</div>
+<div class="grid grid-cols-3 gap-gutter pt-space-xs">
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">总计记录</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg text-primary leading-none" id="stat-total-logs">37</span>
+<span class="font-label-caps text-[11px] text-on-surface-variant">次</span>
+</div>
+<span class="font-label-data-sm text-[10px] text-secondary mt-1 truncate">稳定归档中</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">本季中鱼</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg text-primary-container leading-none" id="stat-total-fish">89</span>
+<span class="font-label-caps text-[11px] text-on-surface-variant">尾</span>
+</div>
+<span class="font-label-data-sm text-[10px] text-tertiary font-medium mt-1 truncate">+12 较上月</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">巨物纪录</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg text-tertiary leading-none" id="stat-record-weight">6.4</span>
+<span class="font-label-caps text-[11px] text-on-surface-variant">kg</span>
+</div>
+<span class="font-label-data-sm text-[10px] text-on-surface truncate">金鳞野鲤</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 搜索与多维过滤条 (Filters & Search) -->
+<section class="px-margin py-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-xl bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="search-input" placeholder="搜索钓点、鱼种、线组号数..." type="text"/>
+</div>
+<button class="h-10 px-3.5 rounded-xl bg-tertiary text-on-tertiary flex items-center gap-1 shadow-sm active:scale-95 transition-all" id="btn-open-modal">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="font-label-data-sm text-label-data-sm font-semibold tracking-wide">记一笔</span>
+</button>
+</div>
+<!-- 过滤器滑动胶囊 (Pills) -->
+<div class="flex items-center gap-2 overflow-x-auto py-space-sm no-scrollbar">
+<button class="filter-chip px-3 py-1 rounded-full bg-primary text-on-primary font-label-data-sm text-label-data-sm whitespace-nowrap shadow-sm" data-filter-type="species" data-val="all">
+        全部鱼种
+      </button>
+<button class="filter-chip px-3 py-1 rounded-full bg-surface-container-low text-on-surface font-label-data-sm text-label-data-sm whitespace-nowrap hover:bg-surface-container" data-filter-type="species" data-val="鲤鱼">
+        野生鲤鱼
+      </button>
+<button class="filter-chip px-3 py-1 rounded-full bg-surface-container-low text-on-surface font-label-data-sm text-label-data-sm whitespace-nowrap hover:bg-surface-container" data-filter-type="species" data-val="鳜鱼">
+        拟饵鳜鱼
+      </button>
+<button class="filter-chip px-3 py-1 rounded-full bg-surface-container-low text-on-surface font-label-data-sm text-label-data-sm whitespace-nowrap hover:bg-surface-container" data-filter-type="species" data-val="鲫鱼">
+        大板鲫
+      </button>
+<div class="w-[1px] h-4 bg-outline-variant flex-shrink-0 mx-1"></div>
+<button class="filter-chip px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-caps text-label-caps whitespace-nowrap" data-filter-type="method" data-val="台钓">
+        台钓底钓
+      </button>
+<button class="filter-chip px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-caps text-label-caps whitespace-nowrap" data-filter-type="method" data-val="路亚">
+        路亚搜底
+      </button>
+<button class="filter-chip px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-caps text-label-caps whitespace-nowrap" data-filter-type="method" data-val="传统钓">
+        谷麦短线
+      </button>
+</div>
+</section>
+<!-- 渔获实战日志流 (Catch Log Feed) -->
+<section class="px-margin py-space-xs flex flex-col gap-space-lg" id="log-list-container">
+<!-- 卡片 1: 纪录级野鲤 -->
+<article class="log-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md" data-count="1" data-id="log-001" data-method="台钓" data-species="鲤鱼" data-weight="6.4">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[10px] font-bold">纪录级 #01</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-caps text-[10px]">台钓重铅</span>
+<span class="px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant font-label-caps text-[10px]">放生归水</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1.5 truncate">界首湾 6.4kg 纯野生金鳞野鲤</h2>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-data-sm text-[11px]">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">location_on</span>界首水库·西北湾回水区</span>
+<span>·</span>
+<span>2024-04-18 16:40</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<div class="flex items-baseline gap-0.5 text-tertiary">
+<span class="font-label-data-lg text-label-data-lg leading-none font-bold">6.40</span>
+<span class="font-label-caps text-label-caps">KG</span>
+</div>
+<span class="font-label-caps text-[10px] text-outline mt-0.5">净长 74.5 CM</span>
+</div>
+</div>
+<!-- 实拍相片展区 (带点击放大交互) -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden cursor-pointer group zoom-trigger" data-preview-img="https://lh3.googleusercontent.com/aida-public/AB6AXuAQdoaowoYkC_ehyqkLCd0eO6AulryvWZTVp6CXkwbb3HjsBTsL4dbyNE_xmyzARgZJ5-eudDmRUVhW2OlnoB-ykZodrIveNfwcY2HGZO8CbXlk-GSLDf5joPXLfyPrxK36jI2wZ8Mzv9oM6sVKjvzm0K4uimdVyFyrkFWz0MeZyx7qxtktJXd77JP_TSzXeqateFW8KhMZDt44Pl7N50Jw1dboO2jzCGr68xLJBR0x-taxfBzGkQ6yHw" data-preview-title="界首湾 6.4kg 纯野生金鳞野鲤 (标尺实测 74.5cm)">
+<img alt="网兜金鲤与实测标尺" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQdoaowoYkC_ehyqkLCd0eO6AulryvWZTVp6CXkwbb3HjsBTsL4dbyNE_xmyzARgZJ5-eudDmRUVhW2OlnoB-ykZodrIveNfwcY2HGZO8CbXlk-GSLDf5joPXLfyPrxK36jI2wZ8Mzv9oM6sVKjvzm0K4uimdVyFyrkFWz0MeZyx7qxtktJXd77JP_TSzXeqateFW8KhMZDt44Pl7N50Jw1dboO2jzCGr68xLJBR0x-taxfBzGkQ6yHw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-md justify-between">
+<div class="flex items-center gap-1.5 text-inverse-on-surface font-label-data-sm text-label-data-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">straighten</span>
+<span>标尺实测: 74.5cm · 鱼体无伤</span>
+</div>
+<span class="h-6 px-2 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-caps text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">fullscreen</span>查看原图
+          </span>
+</div>
+</div>
+<!-- 钓组参数与水情气象沉浸栏 (Instrumentation Well) -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">hardware</span>钓组与线组实配
+          </span>
+<span class="font-label-data-sm text-[11px] text-outline">水深 3.8M · 离底 5CM</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">竿长: 6.3米大物综合竿</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">3.0#主线 / 2.0#碳线子线</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">8号新关东 (双钩)</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">枣核纳米浮标 (调7目钓3目)</span>
+</div>
+<div class="h-[1px] bg-surface-container-high my-0.5"></div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[16px]">thermostat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] text-outline">水温 / 气压</span>
+<span class="font-label-data-sm text-[12px] text-on-surface font-semibold">17.8℃ · 1015 hPa</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">grain</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] text-outline">用饵策略</span>
+<span class="font-label-data-sm text-[12px] text-on-surface font-semibold truncate">老坛谷麦 + 嫩甜玉米</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 操作工具条 -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2">
+<button class="btn-edit text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-surface-container/60 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[15px]">edit_note</span>编辑
+          </button>
+<button class="btn-delete text-error hover:opacity-80 flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-error-container/40 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[15px]">delete_outline</span>归档删除
+          </button>
+</div>
+<div class="flex items-center gap-1 text-outline font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+<span>高保真钓况核准</span>
+</div>
+</div>
+</article>
+<!-- 卡片 2: 暗礁探获鳜鱼 (路亚微物) -->
+<article class="log-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md" data-count="1" data-id="log-002" data-method="路亚" data-species="鳜鱼" data-weight="1.35">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-caps text-[10px] font-bold">路亚搜底</span>
+<span class="px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant font-label-caps text-[10px]">窗口期暴口</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1.5 truncate">岩石落差暗礁探获 42cm 鳜鱼</h2>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-data-sm text-[11px]">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">location_on</span>富春江支流·老桥墩下乱石堆</span>
+<span>·</span>
+<span>2024-04-15 19:15 (暮投)</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<div class="flex items-baseline gap-0.5 text-primary">
+<span class="font-label-data-lg text-label-data-lg leading-none font-bold">1.35</span>
+<span class="font-label-caps text-label-caps">KG</span>
+</div>
+<span class="font-label-caps text-[10px] text-outline mt-0.5">净长 42.0 CM</span>
+</div>
+</div>
+<!-- 钓组与水情简报 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">tune</span>精细路亚微物系统
+          </span>
+<span class="font-label-data-sm text-[11px] text-outline">暗礁深度 2.4M 慢跳</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">竿: 6'4" UL快调微物竿</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">0.6# 8编PE线 + 6lb 氟碳前导</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">3.5g 德州钨钢铅 + 1#曲头钩</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-tertiary font-label-data-sm text-[11px] font-semibold">2.5寸深绿金粉卷尾蛆</span>
+</div>
+<div class="h-[1px] bg-surface-container-high my-0.5"></div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[16px]">water</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] text-outline">流速与透明度</span>
+<span class="font-label-data-sm text-[12px] text-on-surface font-semibold">微流 · 透明度 85cm</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[16px]">compress</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] text-outline">气压曲线</span>
+<span class="font-label-data-sm text-[12px] text-on-surface font-semibold">1018 hPa (上升期)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 操作工具条 -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2">
+<button class="btn-edit text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-surface-container/60 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[15px]">edit_note</span>编辑
+          </button>
+<button class="btn-delete text-error hover:opacity-80 flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-error-container/40 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[15px]">delete_outline</span>归档删除
+          </button>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[13px]">wb_twilight</span>
+<span>暮色窗口捕获</span>
+</div>
+</div>
+</article>
+<!-- 卡片 3: 传统钓野生板鲫群 (配装备图鉴平铺图) -->
+<article class="log-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md" data-count="8" data-id="log-003" data-method="传统钓" data-species="鲫鱼" data-weight="2.8">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-[10px] font-bold">谷麦短线</span>
+<span class="px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant font-label-caps text-[10px]">草洞寻踪</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[10px]">中鱼 8 尾</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1.5 truncate">芦苇丛草洞 野生大板鲫 8尾</h2>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-data-sm text-[11px]">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">location_on</span>青山湖东滩·芦苇草障浅滩</span>
+<span>·</span>
+<span>2024-04-10 09:20 - 13:00</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<div class="flex items-baseline gap-0.5 text-on-surface">
+<span class="font-label-data-lg text-label-data-lg leading-none font-bold">2.80</span>
+<span class="font-label-caps text-label-caps">KG</span>
+</div>
+<span class="font-label-caps text-[10px] text-outline mt-0.5">单尾均重 350g</span>
+</div>
+</div>
+<!-- 精工线组装备图平铺 (带点击放大交互) -->
+<div class="relative w-full h-48 rounded-xl overflow-hidden cursor-pointer group zoom-trigger" data-preview-img="https://lh3.googleusercontent.com/aida-public/AB6AXuCAJoS9Wgq2rvb2rYKCRAezreqdJIQ657x1CtZRuKFQEJLvcqkByfUGtF5eJLrJEK6RY54QKdU-72JfBIocLRQ_o6z3YAtrWUXlnISnKzaGuKjbSIz5oeMudRv909_KI_jfxS4FqpPnnzJuGnYlWNA3TScy_OtGf6r33Ajs1RwG_cOVOA8YJ1-yH1g06c5hpTc0dMisZGjUFtyzBOFlKDeq21E6Az5wNz9m6mKulBINbYnfZqEVKgPIew" data-preview-title="草洞传统钓精密装备组 (8m碳素炮竿 / 七星漂 / 活体皮肉红虫)">
+<img alt="精工钓具与浮漂配件平铺图" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAJoS9Wgq2rvb2rYKCRAezreqdJIQ657x1CtZRuKFQEJLvcqkByfUGtF5eJLrJEK6RY54QKdU-72JfBIocLRQ_o6z3YAtrWUXlnISnKzaGuKjbSIz5oeMudRv909_KI_jfxS4FqpPnnzJuGnYlWNA3TScy_OtGf6r33Ajs1RwG_cOVOA8YJ1-yH1g06c5hpTc0dMisZGjUFtyzBOFlKDeq21E6Az5wNz9m6mKulBINbYnfZqEVKgPIew"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-md justify-between">
+<div class="flex items-center gap-1.5 text-inverse-on-surface font-label-data-sm text-label-data-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">inventory_2</span>
+<span>装备定妆照: 精工配件与仕挂线组</span>
+</div>
+<span class="h-6 px-2 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-caps text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">fullscreen</span>查看图鉴
+          </span>
+</div>
+</div>
+<!-- 钓组参数与水情气象沉浸栏 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">cable</span>传统短线仕挂
+          </span>
+<span class="font-label-data-sm text-[11px] text-outline">水深 1.1M 芦苇边缘缝隙</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">8米高碳定位长竿 (短线操作)</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">1.5# 进口斑马尼龙通线</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">特选孔雀羽七星漂 (4号沉水)</span>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">4号铜头朝天钩 + 活体红虫</span>
+</div>
+<div class="h-[1px] bg-surface-container-high my-0.5"></div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[16px]">sunny</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] text-outline">天气 / 风向</span>
+<span class="font-label-data-sm text-[12px] text-on-surface font-semibold">晴暖微风 · 东南风2级</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">set_meal</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] text-outline">打窝聚鱼</span>
+<span class="font-label-data-sm text-[12px] text-on-surface font-semibold truncate">自制酒米 + 药酒麸皮打点</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 操作工具条 -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2">
+<button class="btn-edit text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-surface-container/60 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[15px]">edit_note</span>编辑
+          </button>
+<button class="btn-delete text-error hover:opacity-80 flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-error-container/40 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[15px]">delete_outline</span>归档删除
+          </button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[13px] text-primary">task_alt</span>
+<span>已入库鱼体数据库</span>
+</div>
+</div>
+</article>
+</section>
+<!-- 空状态占位 (动态筛选无果时展现) -->
+<div class="hidden px-margin py-12 flex-col items-center justify-center text-center" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-outline mb-3">
+<span class="material-symbols-outlined text-[32px]">phishing</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">未检索到匹配的渔获条目</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[240px] mt-1">尝试调整鱼种分类、钓法或者清除搜索关键字。</p>
+<button class="mt-4 px-4 py-2 rounded-xl bg-surface-container-high text-primary font-label-data-sm text-label-data-sm" id="btn-reset-filter">
+      重置所有筛选
+    </button>
+</div>
+<!-- 浮动操作按钮 (Floating Instrument Action) -->
+<aside class="sticky bottom-20 self-end mr-margin mb-2 z-40">
+<button class="h-14 px-5 rounded-full bg-tertiary text-on-tertiary shadow-lg flex items-center gap-2 active:scale-95 transition-all" id="floating-add-btn">
+<span class="material-symbols-outlined text-[24px]">add_circle</span>
+<span class="font-label-data-md text-label-data-md font-bold tracking-wide">记录新出钓</span>
+</button>
+</aside>
+<!-- 三步新增/编辑出钓向导弹窗 (Step-by-Step Modal) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex-col justify-end" id="log-wizard-modal">
+<div class="w-full bg-surface-container-lowest rounded-t-2xl p-space-lg flex flex-col max-h-[85vh] overflow-y-auto shadow-2xl animate-in slide-in-from-bottom duration-300">
+<!-- 弹窗顶栏 -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface" id="modal-heading">记录新出钓日志</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="btn-close-modal">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- 步骤指示器 (Stepper Progress) -->
+<div class="grid grid-cols-3 gap-2 py-space-md">
+<div class="flex flex-col gap-1 border-t-2 border-primary pt-1" id="step-tab-1">
+<span class="font-label-caps text-[10px] text-primary font-bold">STEP 01</span>
+<span class="font-label-data-sm text-[11px] text-on-surface font-medium">水情与标点</span>
+</div>
+<div class="flex flex-col gap-1 border-t-2 border-surface-container-highest pt-1" id="step-tab-2">
+<span class="font-label-caps text-[10px] text-outline font-bold">STEP 02</span>
+<span class="font-label-data-sm text-[11px] text-outline font-medium">鱼种与钓组</span>
+</div>
+<div class="flex flex-col gap-1 border-t-2 border-surface-container-highest pt-1" id="step-tab-3">
+<span class="font-label-caps text-[10px] text-outline font-bold">STEP 03</span>
+<span class="font-label-data-sm text-[11px] text-outline font-medium">饵料与定妆</span>
+</div>
+</div>
+<!-- 步骤内容容器 -->
+<form class="flex flex-col gap-space-md pt-space-xs" id="wizard-form">
+<input id="edit-log-id" type="hidden" value=""/>
+<!-- 步骤 1: 水情与标点 -->
+<div class="flex flex-col gap-space-md" id="step-panel-1">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">出钓标点与水域名</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-low" id="input-location" placeholder="如：界首水库·西北湾回水区" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">水温 (℃)</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-label-data-md text-label-data-md focus:outline-none focus:bg-surface-container-low" id="input-temp" step="0.1" type="number" value="18.5"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">气压 (hPa)</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-label-data-md text-label-data-md focus:outline-none focus:bg-surface-container-low" id="input-pressure" type="number" value="1014"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">作钓水深 (米)</label>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-bold text-lg active:scale-95" onclick="adjustDepth(-0.5)" type="button">-</button>
+<input class="flex-1 h-10 text-center font-label-data-md text-label-data-md bg-surface-container-low rounded-lg text-primary" id="input-depth" readonly="" type="text" value="3.5 M"/>
+<button class="w-10 h-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-bold text-lg active:scale-95" onclick="adjustDepth(0.5)" type="button">+</button>
+</div>
+</div>
+</div>
+<!-- 步骤 2: 鱼种与钓组 -->
+<div class="hidden flex-col gap-space-md" id="step-panel-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">目标鱼种与条目名称</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-low" id="input-title" placeholder="如：深潭巡游纯野生草鱼" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">鱼种分类</label>
+<select class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm focus:outline-none" id="input-species-select">
+<option value="鲤鱼">野生鲤鱼</option>
+<option value="鳜鱼">拟饵鳜鱼</option>
+<option value="鲫鱼">野生大板鲫</option>
+<option value="草鱼">草鱼/青鱼</option>
+<option value="翘嘴">翘嘴红鲌</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">作钓技法</label>
+<select class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm focus:outline-none" id="input-method-select">
+<option value="台钓">台钓底钓</option>
+<option value="路亚">路亚搜底</option>
+<option value="传统钓">传统谷麦</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">单尾重量 / 总重 (KG)</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-label-data-md text-label-data-md focus:outline-none" id="input-weight" step="0.05" type="number" value="2.5"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">入网总尾数</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-label-data-md text-label-data-md focus:outline-none" id="input-count" step="1" type="number" value="1"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">钓组规格 (竿/线/钩)</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none" id="input-rig" placeholder="如：5.4米轻量竿 / 2.0#主线 1.2#子线 / 5号伊势尼" type="text"/>
+</div>
+</div>
+<!-- 步骤 3: 饵料与定妆照片 -->
+<div class="hidden flex-col gap-space-md" id="step-panel-3">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">挂饵策略 / 拟饵型号</label>
+<input class="h-11 px-3 rounded-lg bg-surface-container text-on-surface font-body-md text-body-md focus:outline-none" id="input-bait" placeholder="如：发酵嫩玉米颗粒 + 螺鲤基础窝料" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">出钓留影图鉴</label>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[36px] text-primary">add_a_photo</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface-variant">已链接智能相机标尺识别</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline font-label-caps text-[10px]">保留原图 GPS 与 EXIF 水情信息</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container">
+<input checked="" class="w-4 h-4 text-primary rounded" id="check-release" type="checkbox"/>
+<label class="font-label-data-sm text-label-data-sm text-on-surface" for="check-release">遵循渔乐生态 · 称重拍照后已放生归水</label>
+</div>
+</div>
+<!-- 步骤流转导航键 -->
+<div class="flex items-center justify-between pt-space-sm">
+<button class="px-4 py-2 rounded-xl bg-surface-container text-on-surface-variant font-label-data-sm text-label-data-sm hidden" id="wizard-btn-prev" type="button">
+            上一步
+          </button>
+<div class="flex-1"></div>
+<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-label-data-sm text-label-data-sm font-semibold active:scale-95 shadow-sm" id="wizard-btn-next" type="button">
+            下一步
+          </button>
+<button class="px-5 py-2.5 rounded-xl bg-tertiary text-on-tertiary font-label-data-sm text-label-data-sm font-semibold active:scale-95 shadow-sm hidden" id="wizard-btn-submit" type="submit">
+            确认归档保存
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- 高清大图灯箱预览 (Lightbox Zoom Overlay) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/95 backdrop-blur-md hidden flex-col justify-between p-4" id="lightbox-modal">
+<div class="flex items-center justify-between text-inverse-on-surface pt-2">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-caps text-[10px] text-tertiary-fixed-dim uppercase">High-Resolution Macro View</span>
+<span class="font-headline-sm text-headline-sm truncate text-inverse-on-surface" id="lightbox-title">实拍记录</span>
+</div>
+<button class="w-9 h-9 rounded-full bg-inverse-surface flex items-center justify-center text-inverse-on-surface hover:bg-surface-tint" id="btn-close-lightbox">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex-1 flex items-center justify-center my-4 overflow-hidden">
+<img alt="放大预览" class="max-h-[70vh] max-w-full object-contain rounded-lg shadow-2xl transition-transform" id="lightbox-img" src=""/>
+</div>
+<div class="flex items-center justify-around py-2 px-4 rounded-xl bg-inverse-surface/80 text-inverse-on-surface font-label-caps text-label-caps">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary-fixed">straighten</span>电子标尺校验通过</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary-fixed">gps_fixed</span>EXIF经纬度已隐匿保密</span>
+</div>
+</div>
+<!-- 场景化删除确认提示框 (Delete Confirmation Prompt) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-xs hidden items-center justify-center px-6" id="delete-modal">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-2xl p-space-lg shadow-2xl flex flex-col gap-space-md animate-in zoom-in-95 duration-200">
+<div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">delete_forever</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">确认抹除该条渔获归档？</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">删除后本季度中鱼尾数与单场水情数据将同步冲减，不可撤销。</p>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-4 py-2 rounded-xl bg-surface-container text-on-surface font-label-data-sm text-label-data-sm" id="btn-cancel-delete">
+          保留记录
+        </button>
+<button class="px-4 py-2 rounded-xl bg-error text-on-error font-label-data-sm text-label-data-sm font-semibold active:scale-95" id="btn-confirm-delete">
+          确认删除
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initLogWorkbench() {
+    let currentStep = 1;
+    let pendingDeleteTargetId = null;
+
+    // 状态数据同步
+    let totalLogsCount = 37;
+    let totalFishCount = 89;
+    let recordWeight = 6.4;
+
+    const statLogsEl = document.getElementById('stat-total-logs');
+    const statFishEl = document.getElementById('stat-total-fish');
+    const statWeightEl = document.getElementById('stat-record-weight');
+
+    function updateStats() {
+      if (statLogsEl) statLogsEl.textContent = totalLogsCount;
+      if (statFishEl) statFishEl.textContent = totalFishCount;
+      if (statWeightEl) statWeightEl.textContent = recordWeight.toFixed(1);
+    }
+
+    // 水深递增微调
+    window.adjustDepth = function(delta) {
+      const input = document.getElementById('input-depth');
+      if (!input) return;
+      let val = parseFloat(input.value) || 3.0;
+      val = Math.max(0.5, Math.min(15.0, val + delta));
+      input.value = val.toFixed(1) + ' M';
+    };
+
+    // 弹窗向导流转
+    const modal = document.getElementById('log-wizard-modal');
+    const openBtn = document.getElementById('btn-open-modal');
+    const floatingBtn = document.getElementById('floating-add-btn');
+    const closeBtn = document.getElementById('btn-close-modal');
+    const nextBtn = document.getElementById('wizard-btn-next');
+    const prevBtn = document.getElementById('wizard-btn-prev');
+    const submitBtn = document.getElementById('wizard-btn-submit');
+    const wizardForm = document.getElementById('wizard-form');
+    const modalHeading = document.getElementById('modal-heading');
+    const editLogIdInput = document.getElementById('edit-log-id');
+
+    function switchStep(step) {
+      currentStep = step;
+      [1, 2, 3].forEach(s => {
+        const panel = document.getElementById('step-panel-' + s);
+        const tab = document.getElementById('step-tab-' + s);
+        if (panel) {
+          if (s === step) {
+            panel.classList.remove('hidden');
+            panel.classList.add('flex');
+          } else {
+            panel.classList.add('hidden');
+            panel.classList.remove('flex');
+          }
+        }
+        if (tab) {
+          if (s === step) {
+            tab.className = 'flex flex-col gap-1 border-t-2 border-primary pt-1';
+            tab.children[0].className = 'font-label-caps text-[10px] text-primary font-bold';
+            tab.children[1].className = 'font-label-data-sm text-[11px] text-on-surface font-medium';
+          } else if (s < step) {
+            tab.className = 'flex flex-col gap-1 border-t-2 border-primary-container pt-1';
+            tab.children[0].className = 'font-label-caps text-[10px] text-primary font-bold';
+            tab.children[1].className = 'font-label-data-sm text-[11px] text-on-surface-variant font-medium';
+          } else {
+            tab.className = 'flex flex-col gap-1 border-t-2 border-surface-container-highest pt-1';
+            tab.children[0].className = 'font-label-caps text-[10px] text-outline font-bold';
+            tab.children[1].className = 'font-label-data-sm text-[11px] text-outline font-medium';
+          }
+        }
+      });
+
+      if (step === 1) {
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.remove('hidden');
+        submitBtn.classList.add('hidden');
+      } else if (step === 2) {
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+        submitBtn.classList.add('hidden');
+      } else if (step === 3) {
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.add('hidden');
+        submitBtn.classList.remove('hidden');
+      }
+    }
+
+    function openModalForNew() {
+      editLogIdInput.value = '';
+      modalHeading.textContent = '记录新出钓日志';
+      document.getElementById('input-title').value = '';
+      document.getElementById('input-location').value = '';
+      document.getElementById('input-weight').value = '1.8';
+      document.getElementById('input-count').value = '1';
+      document.getElementById('input-rig').value = '';
+      document.getElementById('input-bait').value = '';
+      switchStep(1);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModalForNew);
+    if (floatingBtn) floatingBtn.addEventListener('click', openModalForNew);
+
+    if (closeBtn) closeBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      if (currentStep < 3) switchStep(currentStep + 1);
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      if (currentStep > 1) switchStep(currentStep - 1);
+    });
+
+    // 提交创建或修改
+    if (wizardForm) wizardForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const editingId = editLogIdInput.value;
+      const title = document.getElementById('input-title').value || '未命名渔获条目';
+      const species = document.getElementById('input-species-select').value;
+      const method = document.getElementById('input-method-select').value;
+      const weight = parseFloat(document.getElementById('input-weight').value) || 1.0;
+      const count = parseInt(document.getElementById('input-count').value, 10) || 1;
+      const loc = document.getElementById('input-location').value || '未知标点';
+      const rig = document.getElementById('input-rig').value || '标准线组配置';
+      const bait = document.getElementById('input-bait').value || '谷麦混合饵';
+      const temp = document.getElementById('input-temp').value || '18.0';
+      const pressure = document.getElementById('input-pressure').value || '1013';
+
+      if (editingId) {
+        // 更新已有卡片
+        const card = document.querySelector(`.log-card[data-id="${editingId}"]`);
+        if (card) {
+          card.setAttribute('data-species', species);
+          card.setAttribute('data-method', method);
+          card.setAttribute('data-weight', weight);
+          card.setAttribute('data-count', count);
+          const h2 = card.querySelector('h2');
+          if (h2) h2.textContent = title;
+          const weightDisplay = card.querySelector('.font-label-data-lg');
+          if (weightDisplay) weightDisplay.textContent = weight.toFixed(2);
+        }
+      } else {
+        // 创建新卡片
+        totalLogsCount += 1;
+        totalFishCount += count;
+        if (weight > recordWeight) recordWeight = weight;
+        updateStats();
+
+        const container = document.getElementById('log-list-container');
+        const newCard = document.createElement('article');
+        const newId = 'log-' + Date.now();
+        newCard.className = 'log-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md animate-in fade-in duration-300';
+        newCard.setAttribute('data-id', newId);
+        newCard.setAttribute('data-species', species);
+        newCard.setAttribute('data-method', method);
+        newCard.setAttribute('data-weight', weight);
+        newCard.setAttribute('data-count', count);
+
+        newCard.innerHTML = `
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex flex-col min-w-0">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-[10px] font-bold">${method}</span>
+                <span class="px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant font-label-caps text-[10px]">${species}</span>
+                <span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[10px]">${count} 尾入网</span>
+              </div>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface mt-1.5 truncate">${title}</h2>
+              <div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-data-sm text-[11px]">
+                <span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">location_on</span>${loc}</span>
+                <span>·</span>
+                <span>刚刚归档</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-end flex-shrink-0">
+              <div class="flex items-baseline gap-0.5 text-tertiary">
+                <span class="font-label-data-lg text-label-data-lg leading-none font-bold">${weight.toFixed(2)}</span>
+                <span class="font-label-caps text-label-caps">KG</span>
+              </div>
+              <span class="font-label-caps text-[10px] text-outline mt-0.5">实测记录</span>
+            </div>
+          </div>
+
+          <div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-caps text-label-caps text-on-surface-variant uppercase flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px] text-primary">hardware</span>钓组与线组实配
+              </span>
+              <span class="font-label-data-sm text-[11px] text-outline">水深 ${document.getElementById('input-depth').value}</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">${rig}</span>
+              <span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-data-sm text-[11px]">用饵: ${bait}</span>
+            </div>
+            <div class="h-[1px] bg-surface-container-high my-0.5"></div>
+            <div class="grid grid-cols-2 gap-space-sm">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+                  <span class="material-symbols-outlined text-[16px]">thermostat</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-label-caps text-[9px] text-outline">水温 / 气压</span>
+                  <span class="font-label-data-sm text-[12px] text-on-surface font-semibold">${temp}℃ · ${pressure} hPa</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-secondary">
+                  <span class="material-symbols-outlined text-[16px]">verified</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-label-caps text-[9px] text-outline">实测校验</span>
+                  <span class="font-label-data-sm text-[12px] text-on-surface font-semibold">自验无误</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-space-xs">
+            <div class="flex items-center gap-2">
+              <button class="btn-edit text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-surface-container/60 active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-[15px]">edit_note</span>编辑
+              </button>
+              <button class="btn-delete text-error hover:opacity-80 flex items-center gap-1 font-label-data-sm text-[12px] py-1 px-2 rounded-lg bg-error-container/40 active:scale-95 transition-all">
+                <span class="material-symbols-outlined text-[15px]">delete_outline</span>归档删除
+              </button>
+            </div>
+            <span class="font-label-caps text-[10px] text-outline">刚刚录入</span>
+          </div>
+        `;
+        if (container) container.insertBefore(newCard, container.firstChild);
+      }
+
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    // 动态代理卡片内编辑与删除
+    document.addEventListener('click', (e) => {
+      const editBtn = e.target.closest('.btn-edit');
+      if (editBtn) {
+        const card = editBtn.closest('.log-card');
+        if (!card) return;
+        const id = card.getAttribute('data-id');
+        const species = card.getAttribute('data-species') || '鲤鱼';
+        const method = card.getAttribute('data-method') || '台钓';
+        const weight = card.getAttribute('data-weight') || '2.0';
+        const count = card.getAttribute('data-count') || '1';
+        const title = card.querySelector('h2') ? card.querySelector('h2').textContent : '';
+
+        editLogIdInput.value = id;
+        modalHeading.textContent = '编辑渔获记录参数';
+        document.getElementById('input-title').value = title;
+        document.getElementById('input-species-select').value = species;
+        document.getElementById('input-method-select').value = method;
+        document.getElementById('input-weight').value = weight;
+        document.getElementById('input-count').value = count;
+        switchStep(2);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        return;
+      }
+
+      const delBtn = e.target.closest('.btn-delete');
+      if (delBtn) {
+        const card = delBtn.closest('.log-card');
+        if (!card) return;
+        pendingDeleteTargetId = card.getAttribute('data-id');
+        const delModal = document.getElementById('delete-modal');
+        if (delModal) {
+          delModal.classList.remove('hidden');
+          delModal.classList.add('flex');
+        }
+        return;
+      }
+
+      // 相片放大灯箱查看
+      const zoomTrigger = e.target.closest('.zoom-trigger');
+      if (zoomTrigger) {
+        const imgUrl = zoomTrigger.getAttribute('data-preview-img');
+        const imgTitle = zoomTrigger.getAttribute('data-preview-title') || '标尺实测原图';
+        const lightbox = document.getElementById('lightbox-modal');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbTitle = document.getElementById('lightbox-title');
+        if (lightbox && lbImg) {
+          lbImg.src = imgUrl;
+          if (lbTitle) lbTitle.textContent = imgTitle;
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+        }
+      }
+    });
+
+    // 关闭灯箱
+    const closeLbBtn = document.getElementById('btn-close-lightbox');
+    if (closeLbBtn) {
+      closeLbBtn.addEventListener('click', () => {
+        const lb = document.getElementById('lightbox-modal');
+        if (lb) {
+          lb.classList.add('hidden');
+          lb.classList.remove('flex');
+        }
+      });
+    }
+
+    // 删除弹窗确认与取消
+    const cancelDelBtn = document.getElementById('btn-cancel-delete');
+    const confirmDelBtn = document.getElementById('btn-confirm-delete');
+    const delModal = document.getElementById('delete-modal');
+
+    if (cancelDelBtn) cancelDelBtn.addEventListener('click', () => {
+      pendingDeleteTargetId = null;
+      delModal.classList.add('hidden');
+      delModal.classList.remove('flex');
+    });
+
+    if (confirmDelBtn) confirmDelBtn.addEventListener('click', () => {
+      if (pendingDeleteTargetId) {
+        const card = document.querySelector(`.log-card[data-id="${pendingDeleteTargetId}"]`);
+        if (card) {
+          const cCount = parseInt(card.getAttribute('data-count'), 10) || 1;
+          totalLogsCount = Math.max(0, totalLogsCount - 1);
+          totalFishCount = Math.max(0, totalFishCount - cCount);
+          updateStats();
+          card.remove();
+        }
+      }
+      pendingDeleteTargetId = null;
+      delModal.classList.add('hidden');
+      delModal.classList.remove('flex');
+      runFiltering();
+    });
+
+    // 多维筛选 & 搜索逻辑
+    let activeSpeciesFilter = 'all';
+    let activeMethodFilter = 'all';
+
+    const searchInput = document.getElementById('search-input');
+    const emptyState = document.getElementById('empty-state');
+    const resetFilterBtn = document.getElementById('btn-reset-filter');
+
+    function runFiltering() {
+      const q = (searchInput ? searchInput.value : '').trim().toLowerCase();
+      const cards = document.querySelectorAll('.log-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const sp = card.getAttribute('data-species') || '';
+        const me = card.getAttribute('data-method') || '';
+        const text = card.textContent.toLowerCase();
+
+        const matchSpecies = (activeSpeciesFilter === 'all') || (sp === activeSpeciesFilter);
+        const matchMethod = (activeMethodFilter === 'all') || (me === activeMethodFilter);
+        const matchQuery = !q || text.includes(q);
+
+        if (matchSpecies && matchMethod && matchQuery) {
+          card.classList.remove('hidden');
+          card.classList.add('flex');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+          card.classList.remove('flex');
+        }
+      });
+
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          emptyState.classList.add('flex');
+        } else {
+          emptyState.classList.add('hidden');
+          emptyState.classList.remove('flex');
+        }
+      }
+    }
+
+    if (searchInput) searchInput.addEventListener('input', runFiltering);
+
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const type = chip.getAttribute('data-filter-type');
+        const val = chip.getAttribute('data-val');
+
+        if (type === 'species') {
+          activeSpeciesFilter = val;
+          document.querySelectorAll('.filter-chip[data-filter-type="species"]').forEach(c => {
+            c.className = 'filter-chip px-3 py-1 rounded-full bg-surface-container-low text-on-surface font-label-data-sm text-label-data-sm whitespace-nowrap hover:bg-surface-container';
+          });
+          chip.className = 'filter-chip px-3 py-1 rounded-full bg-primary text-on-primary font-label-data-sm text-label-data-sm whitespace-nowrap shadow-sm';
+        } else if (type === 'method') {
+          if (activeMethodFilter === val) {
+            activeMethodFilter = 'all';
+            chip.className = 'filter-chip px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-caps text-label-caps whitespace-nowrap';
+          } else {
+            activeMethodFilter = val;
+            document.querySelectorAll('.filter-chip[data-filter-type="method"]').forEach(c => {
+              c.className = 'filter-chip px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-caps text-label-caps whitespace-nowrap';
+            });
+            chip.className = 'filter-chip px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-caps text-label-caps whitespace-nowrap';
+          }
+        }
+        runFiltering();
+      });
+    });
+
+    if (resetFilterBtn) {
+      resetFilterBtn.addEventListener('click', () => {
+        activeSpeciesFilter = 'all';
+        activeMethodFilter = 'all';
+        if (searchInput) searchInput.value = '';
+        document.querySelectorAll('.filter-chip[data-filter-type="species"]').forEach(c => {
+          c.className = c.getAttribute('data-val') === 'all' 
+            ? 'filter-chip px-3 py-1 rounded-full bg-primary text-on-primary font-label-data-sm text-label-data-sm whitespace-nowrap shadow-sm'
+            : 'filter-chip px-3 py-1 rounded-full bg-surface-container-low text-on-surface font-label-data-sm text-label-data-sm whitespace-nowrap hover:bg-surface-container';
+        });
+        document.querySelectorAll('.filter-chip[data-filter-type="method"]').forEach(c => {
+          c.className = 'filter-chip px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-caps text-label-caps whitespace-nowrap';
+        });
+        runFiltering();
+      });
+    }
+
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-[env(safe-area-inset-bottom,0px)] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,50,61,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-1"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="workstation" href="#"><span class="material-symbols-outlined text-[22px]">radar</span><span class="font-label-caps text-[10px]">工作台</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="spots" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-caps text-[10px]">钓点水情</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-all gap-0.5 text-primary-container font-semibold" data-path="logs" href="#"><span class="material-symbols-outlined text-[22px]">phishing</span><span class="font-label-caps text-[10px]">渔获记录</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="insights" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-caps text-[10px]">深度洞察</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="tackle" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-caps text-[10px]">装备图鉴</span></a></div></nav></body></html>
